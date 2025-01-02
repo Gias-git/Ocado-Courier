@@ -1,13 +1,11 @@
-import React from 'react';
 
-import { TbCurrencyTaka } from 'react-icons/tb';
-import pickRequest from '../../assets/Icons/pick request.png'
 import FirstRow from './FirstRow';
+import GraphSection from './GraphSection';
 import SecondRow from './secondRow';
 
 const DashBoardPage = () => {
     return (
-        <div>
+        <div className='overflow-y-auto '>
             {/* Page Heading */}
             <div className='mb-10'>
                 <h1 className='text-3xl font-bold'>Dashboard</h1>
@@ -25,6 +23,12 @@ const DashBoardPage = () => {
             <div className='mt-8'>
 
                 <SecondRow></SecondRow>
+            </div>
+
+            {/* Graph section */}
+
+            <div>
+                <GraphSection></GraphSection>
             </div>
         </div>
     );

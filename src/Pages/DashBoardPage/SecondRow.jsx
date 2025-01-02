@@ -2,40 +2,46 @@ import React from 'react';
 import PaymentReadyGenerate from './paymentReadyGenerate';
 import Returned from './Returned';
 import PaymentRelease from './PaymentRelease';
+import PaymentMethod from './PaymentMethod';
+import TotalOverview from './TotalOverview';
 
 const SecondRow = () => {
     return (
         <div>
-            <div className="grid grid-cols-5 gap-4">
+            <div className="grid grid-cols-5 gap-8">
 
 
                 {/* paymentReadyGenerate */}
-                <div className="col-span-2 bg-[#ffff] p-4 rounded-xl shadow-md">
+                <div className="col-span-2 bg-[#ffff] p-4 rounded-xl">
 
                     <PaymentReadyGenerate></PaymentReadyGenerate>
 
                 </div>
 
+                {/* returned */}
                 <div className="col-span-1 bg-[#ffff]  rounded-xl shadow-md">
                     <Returned></Returned>
                 </div>
 
-                <div className="col-span-2 row-span-2 bg-[#ffff] p-4 rounded-xl shadow-md">
-                    <h1> PaymentReady </h1>
-                    {/* <PaymentRelease /> */}
+                <div className="col-span-2 row-span-2 bg-[#ffff] p-4 rounded-xl ">
+                   
+                    <TotalOverview></TotalOverview>
                 </div>
 
 
 
                 {/*Payment Release*/}
 
-
-                <div className="col-span-2  bg-[#ffff] p-4 rounded-xl shadow-md">
+                <div className="col-span-2   ">
                     <PaymentRelease></PaymentRelease>
                 </div>
-                <div className="col-span-1 bg-white p-4 rounded-xl shadow-md">
-                    <h1> PaymentReady </h1>
-                    {/* <PaymentMethod /> */}
+
+
+                {/* Payment Method */}
+                <div className="col-span-1 bg-white  rounded-xl flex flex-col gap-4 ">
+                    <h1 className='text-lg font-semibold'> Payment Method </h1>
+
+                    <PaymentMethod></PaymentMethod>
                 </div>
 
 

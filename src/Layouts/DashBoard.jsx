@@ -6,18 +6,18 @@ import StartComponent from '../Components/StartComponent';
 
 const DashBoard = () => {
     return (
-        <div className='flex font-urbanist  bg-[#fff5f5] '>
+        <div className='flex font-urbanist min-h-screen  bg-[#fff5f5] '>
 
             {/* sidebar */}
-            <div className=' border-r-2 border-[#E0E0E0] min-h-screen flex flex-col pt-[18px] items-center bg-gradient-to-b from-[#FFEDED] via-[#FFEDED] to-[#FFFFFF]'>
+            <div className='fixed z-50 border-r-2 border-[#E0E0E0] min-h-screen flex flex-col pt-[18px] items-center bg-gradient-to-b from-[#FFEDED] via-[#FFEDED] to-[#FFFFFF]'>
                 <SideBar></SideBar>
             </div>
 
             {/* main section */}
-            <div className='w-full'>
+            <div className='w-full ml-[86px] '>
                 {/* navbar */}
 
-                <div className='w-full'>
+                <div className='w-full '>
                     <Navbar></Navbar>
                     <StartComponent></StartComponent>
                 </div>

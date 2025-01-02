@@ -28,7 +28,7 @@ const PaymentReadyGenerate = () => {
                 <hr className='border-[#42B6F6] border-2 my-2 w-6/12  ml-auto rounded-lg' />
                 <div className='flex gap-6'>
                     <button className='text-sm text-[#0CBC63] rounded-xl font-semibold bg-[#4ad99237] px-3 py-1'>Amount</button>
-                    <h1 className='flex text-3xl font-semibold text-right'> <h1 className='font-bold'> ৳ 10,75,978 </h1> </h1>
+                    <h1 className='flex text-xl font-semibold text-right'> <h1 className='font-bold'> ৳ 10,75,978 </h1> </h1>
                 </div>
             </div>
         </div>
