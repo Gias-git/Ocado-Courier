@@ -5,6 +5,10 @@ import { RxDashboard } from 'react-icons/rx';
 import { IoMdSettings } from 'react-icons/io';
 import { AiOutlinePoweroff } from 'react-icons/ai';
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import { BsClipboard2PlusFill, BsClipboardPlusFill } from 'react-icons/bs';
+import { FaBoxOpen } from 'react-icons/fa';
+import { HiDocumentText } from 'react-icons/hi2';
 
 const SideBar = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -21,7 +25,7 @@ const SideBar = () => {
         <div onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className={`${isHovered ? 'w-[240px]' : 'w-[86px] '
-                } flex flex-col justify-between h-screen pb-14 bg-gray-200 transition-all duration-300 transform px-5 `}
+                } flex flex-col justify-between h-screen pb-14  transition-all duration-300 transform px-5 `}
         >
 
             {/* Top section */}
@@ -34,38 +38,86 @@ const SideBar = () => {
                 {/* Menu section */}
                 <div className='flex gap-4 justify-center items-center flex-col mt-[40px] '>
 
-                    <button
-                        className='flex justify-start items-center  px-4 py-3 gap-2 hover:bg-[#E8333036] w-full text-left text-white hover:text-primaryColor rounded-md'>
-                        <div>
-                            <RxDashboard className='text-2xl ' />
-                        </div>
-                        <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px] transition-all duration-700 transform ease-in-out`}> DashBoard </h1>
-                    </button>
+
+                    {/* Home Page */}
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                            `${isActive ? 'text-primaryColor border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                        }
+                    >
+                        <button
+                            className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
+                        >
+                            <div>
+                                <RxDashboard className="text-2xl" />
+                            </div>
+                            <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
+                                DashBoard
+                            </h1>
+                        </button>
+                    </NavLink>
+
+                    {/* Add Parcel */}
+                    <NavLink
+                        to="/addParcel"
+                        className={({ isActive }) =>
+                            `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                        }
+                    >
+                        <button
+                            className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
+                        >
+                            <div>
+                                <BsClipboardPlusFill className="text-2xl" />
+                            </div>
+                            <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
+                                Add Parcel
+                            </h1>
+                        </button>
+                    </NavLink>
 
 
-                    <button
-                        className='flex justify-start items-center  px-4 py-3 gap-2 hover:bg-[#E8333036] w-full text-left text-white hover:text-primaryColor rounded-md'>
-                        <div>
-                            <RxDashboard className='text-2xl ' />
-                        </div>
-                        <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px] transition-all duration-700 transform ease-in-out`}> Add Parcel </h1>
-                    </button>
+
+                    {/* Request List */}
+                    <NavLink
+                        to="/requestList"
+                        className={({ isActive }) =>
+                            `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                        }
+                    >
+                        <button
+                            className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
+                        >
+                            <div>
+                                <FaBoxOpen className="text-2xl" />
+                            </div>
+                            <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
+                                Request List
+                            </h1>
+                        </button>
+                    </NavLink>
 
 
-                    <button
-                        className='flex justify-start items-center  px-4 py-3 gap-2 hover:bg-[#E8333036] w-full text-left text-white hover:text-primaryColor rounded-md'>
-                        <div>
-                            <RxDashboard className='text-2xl ' />
-                        </div>
-                        <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px] transition-all duration-700 transform ease-in-out`}> DashBoard </h1>
-                    </button>
 
-
-
-
-
-
-
+                    {/* All Parcel List */}
+                    <NavLink
+                        to="/allParcelList"
+                        className={({ isActive }) =>
+                            `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                        }
+                    >
+                        <button
+                            className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
+                        >
+                            <div>
+                                <HiDocumentText  className="text-2xl" />
+                            </div>
+                            <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
+                                All Parcel
+                            </h1>
+                        </button>
+                    </NavLink>
 
 
 

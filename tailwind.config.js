@@ -5,17 +5,26 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily:{
+    fontFamily: {
       'lato': ['Lato', 'sans-serif'],
       'urbanist': ['Urbanist', 'sans-serif'],
       'nunitoSans': ['Nunito Sans', 'sans-serif'],
     },
-    colors: {
-      primaryColor: '#E83330',
-      secondaryColor: '#FFEDED',
+    extend: {
+      colors: {
+        primaryColor: '#E83330',
+        secondaryColor: '#FFEDED',
+      },
+      order: {
+        13: '13',
+        14: '14',
+        15: '15', // Add as many as needed
+      },
+      boxShadow: {
+        'inset-custom': 'inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        'left': '-2px 0px 3px 0px rgba(0, 0, 0, 0.25)', 
+      },
     },
-  
   },
   plugins: [require('daisyui')],
 }
-

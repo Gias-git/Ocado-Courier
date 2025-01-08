@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const CircularProgressBar = ({ size = 200, strokeWidth = 10, progress, color, trackColor }) => {
+const CircularProgressBar = ({
+  size = 200,
+  strokeWidth = 10,
+  progress,
+  color,
+  trackColor,
+}) => {
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (progress / 100) * circumference;
@@ -9,7 +15,7 @@ const CircularProgressBar = ({ size = 200, strokeWidth = 10, progress, color, tr
     <svg
       width={size}
       height={size}
-      className="relative transform -rotate-20" // Adjust rotation for left-side progress
+      style={{ transform: "rotate(-10deg)" }}
     >
       {/* Track */}
       <circle
@@ -17,7 +23,7 @@ const CircularProgressBar = ({ size = 200, strokeWidth = 10, progress, color, tr
         cy={size / 2}
         r={radius}
         fill="transparent"
-        stroke={trackColor || "#e5e7eb"} // Default gray for the track
+        stroke={trackColor || "#e5e7eb"}
         strokeWidth={strokeWidth}
       />
       {/* Progress */}
@@ -26,17 +32,33 @@ const CircularProgressBar = ({ size = 200, strokeWidth = 10, progress, color, tr
         cy={size / 2}
         r={radius}
         fill="transparent"
-        stroke={color || "#4ade80"} // Default green for progress
+        stroke={color || "#4ade80"}
         strokeWidth={strokeWidth}
         strokeDasharray={circumference}
         strokeDashoffset={offset}
         strokeLinecap="round"
+        style={{
+          transition: "stroke-dashoffset 3s ease-in-out",
+        }}
       />
     </svg>
   );
 };
 
 const CircularProgressDashboard = () => {
+  const [progressGreen, setProgressGreen] = useState(0);
+  const [progressOrange, setProgressOrange] = useState(0);
+  const [progressRed, setProgressRed] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setProgressGreen(90);
+      setProgressOrange(70);
+      setProgressRed(22);
+    }, 500); // Delay to trigger animation
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="flex flex-col items-center">
       <div className="relative w-56 h-56 flex justify-center items-center">
@@ -44,7 +66,7 @@ const CircularProgressDashboard = () => {
         <CircularProgressBar
           size={200}
           strokeWidth={10}
-          progress={75} // Percentage of progress
+          progress={progressGreen}
           color="#16a34a"
         />
         {/* Orange Progress */}
@@ -52,7 +74,7 @@ const CircularProgressDashboard = () => {
           <CircularProgressBar
             size={160}
             strokeWidth={10}
-            progress={60}
+            progress={progressOrange}
             color="#f97316"
           />
         </div>
@@ -61,7 +83,7 @@ const CircularProgressDashboard = () => {
           <CircularProgressBar
             size={120}
             strokeWidth={10}
-            progress={70}
+            progress={progressRed}
             color="#dc2626"
           />
         </div>
