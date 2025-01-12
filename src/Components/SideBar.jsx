@@ -9,6 +9,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { BsClipboard2PlusFill, BsClipboardPlusFill } from 'react-icons/bs';
 import { FaBoxOpen } from 'react-icons/fa';
 import { HiDocumentText } from 'react-icons/hi2';
+import { MdLogout } from 'react-icons/md';
 
 const SideBar = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -111,7 +112,7 @@ const SideBar = () => {
                             className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
                         >
                             <div>
-                                <HiDocumentText  className="text-2xl" />
+                                <HiDocumentText className="text-2xl" />
                             </div>
                             <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
                                 All Parcel
@@ -121,14 +122,72 @@ const SideBar = () => {
 
 
 
+                    {/* payment Invoice List  */}
+                    <NavLink
+                        to="/paymentInvoiceList"
+                        className={({ isActive }) =>
+                            `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                        }
+                    >
+                        <button
+                            className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
+                        >
+                            <div>
+                                <HiDocumentText className="text-2xl" />
+                            </div>
+                            <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
+                                Payment Invoice List
+                            </h1>
+                        </button>
+                    </NavLink>
+
                 </div>
             </div>
 
+
+
+
             {/* Bottom Section */}
 
-            <div className='flex gap-9 justify-center items-center flex-col mt-[40px] text-2xl'>
-                <AiOutlinePoweroff />
-                <IoMdSettings />
+            <div className='flex gap-5 justify-center items-center flex-col mt-[40px] text-2xl'>
+                {/* settings */}
+                <NavLink
+                    to="/profile"
+                    className={({ isActive }) =>
+                        `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                    }
+                >
+                    <button
+                        className="flex justify-start items-center px-4 py-2 gap-4 text-left  hover:text-primaryColor"
+                    >
+                        <div>
+                            <IoMdSettings className="text-2xl" />
+                        </div>
+                        <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
+                            Setting
+                        </h1>
+                    </button>
+                </NavLink>
+
+
+                {/* Logout */}
+                <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                        `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                    }
+                >
+                    <button
+                        className="flex justify-start items-center px-4 py-2 gap-4 text-left  hover:text-primaryColor"
+                    >
+                        <div>
+                            <MdLogout className="text-2xl" />
+                        </div>
+                        <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
+                            logout
+                        </h1>
+                    </button>
+                </NavLink>
             </div>
         </div>
     );

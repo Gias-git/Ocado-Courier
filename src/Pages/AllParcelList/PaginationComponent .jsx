@@ -19,7 +19,7 @@ const PaginationComponent = () => {
   };
 
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-between flex-col md:flex-row mb-20 w-full'>
       {/* Rows per page select */}
       <div className='flex justify-center items-center'>
         <h1> Show {rowsPerPage} per page </h1>

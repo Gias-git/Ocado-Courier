@@ -4,7 +4,9 @@ import { FaLocationDot } from "react-icons/fa6";
 import { HiMiniDocumentMinus } from "react-icons/hi2";
 import { Pagination, TablePagination } from "@mui/material";
 import { useState } from "react";
-import PaginationComponent from "./PaginationComponent ";
+import PaginationComponent from "../AllParcelList/PaginationComponent ";
+import { CiSquareCheck } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 
 const RequestList = () => {
@@ -22,13 +24,13 @@ const RequestList = () => {
         setPage(totalPages); // Reset page when rows per page change
     };
 
-    const parcels = [
+    const Requesparcels = [
         {
             creationDate: "28/09/2024",
             creationTime: "08:24 AM",
             parcelID: "54458724543",
             orderID: "644",
-            customerName: "Abdul Golam",
+            customerName: "Rahman",
             address: "Mirpur DOHS Central Masjid, Road No. 7, Avenue 8",
             phone: "01636073552",
             parcelStatus: false,
@@ -37,6 +39,7 @@ const RequestList = () => {
             value: "50,000",
             charge: "582.19",
             actions: ["View", "Edit"],
+            paid: false
         },
         {
             creationDate: "28/09/2024",
@@ -44,7 +47,7 @@ const RequestList = () => {
             parcelID: "54458724543",
             orderID: "644",
             customerName: "Abdul Golam",
-            address: "Mirpur DOHS aaaaaaaaaasdasdadasdsssss Central Masjid, Road No. 7, Avenue 8",
+            address: "Mirpur DOHS aaaaaaaaaa sdasdadasdsssss Central Masjid, Road No. 7, Avenue 8",
             phone: "01636073552",
             parcelStatus: true,
             deliveryNote: "Note: kalkel delivery ante hobe",
@@ -52,6 +55,7 @@ const RequestList = () => {
             value: "50,000",
             charge: "582.19",
             actions: ["View", "Edit"],
+            paid: false
         }
     ]
     return (
@@ -64,7 +68,11 @@ const RequestList = () => {
 
             {/* Input & sorting section */}
 
-            <SortingHeading></SortingHeading>
+            <div className="hidden lg:block">
+                <SortingHeading></SortingHeading>
+            </div>
+
+
 
 
             {/* table section */}
@@ -75,6 +83,7 @@ const RequestList = () => {
                 <table className="w-full rounded-lg bg-white">
                     <thead className="rounded-lg">
                         <tr className="bg-[#FAFAFA] text-sm font-medium text-[#152934D9] my-4 ">
+
                             <th className="border border-gray-200 px-4 py-2 border-l-2">Creation Info</th>
                             <th className="border border-gray-200 px-4 py-2">Parcel ID</th>
                             <th className="border border-gray-200 px-4 py-2">Customer Details</th>
@@ -85,8 +94,9 @@ const RequestList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {parcels.map((parcel, index) => (
+                        {Requesparcels.map((parcel, index) => (
                             <tr key={index} className="border-t">
+
                                 <td className="border px-4 py-2 text-center">
                                     {parcel.creationDate}
                                     <br />
@@ -125,7 +135,7 @@ const RequestList = () => {
                                 </td>
                                 <td className="border p-12 shadow-left ">
                                     <div className="flex flex-col space-y-2">
-                                        <button className="text-[white] bg-[#E83330] px-4 py-2 rounded-md">View</button>
+                                       <Link to='/requestList/parcelView' className="block  px-4 py-2 text-[white] bg-[#E83330] rounded-md text-center"><button className="">View</button> </Link> 
                                         <button className="text-[#E83330] bg-[white] px-4 py-2 border-2 border-[#E83330] rounded-md">Edit</button>
                                     </div>
                                 </td>
@@ -143,13 +153,62 @@ const RequestList = () => {
 
 
 
+            {/* Table Mobile View */}
 
-            {/* Paginate */}
+            <div className='w-full xl:hidden rounded-lg bg-white space-y-5 p-3 mb-12'>
 
-            <div className="mt-6">
+                {
+                    Requesparcels.map((parcel) => {
+                        // Parcel container
+                        return <div className='min-h-[177px] p-3 border-[1px] border-primaryColor rounded-lg '>
 
-                <PaginationComponent></PaginationComponent>
+                            {/* parcel  Status*/}
+                            <div className='flex justify-center items-center'>
+                                <button
+                                    className={`px-2 py-1 flex gap-3 justify-center items-center text-sm font-semibold rounded ${parcel.parcelStatus ? "bg-[#FFBEBE99] text-red-700"
+                                        : "bg-[#16E36826] text-[#14885F]"
+                                        }`}
+                                >
+                                    {parcel.parcelStatus || <> <FaBoxOpen /> Parcel Request</>}
+                                    {parcel.parcelStatus && <> <HiMiniDocumentMinus /> Return with Delivery Charge</>}
+
+                                </button>
+                            </div>
+
+
+
+                            <div className='flex gap-4 mt-4'>
+
+                                <div className='text-sm w-1/2 flex flex-col items-start gap-1'>
+                                    <p> P. ID: <span className="text-red-500">{parcel.parcelID}</span> </p>
+                                    <h1 className="font-medium flex gap-2 items-center"><FaUser />{parcel.customerName}</h1>
+                                    <h1 className="flex gap-2 "> <div>  <FaLocationDot className="mt-1" /> </div> <div>{parcel.address} </div></h1>
+                                    <h1 className='text-[#1B6EC0] font-medium'>(Regular)</h1>
+                                </div>
+
+                                <div className='text-sm w-1/2 flex flex-col items-end gap-1'>
+                                    <button
+                                        className={`px-2 py-1 flex gap-3 justify-center items-center text-[12px] font-semibold w-[65px] rounded bg-[#EAFAF8] text-[#258073] border-[1px] border-[#258073] `}
+                                    >
+                                        {parcel.paid || <> Paid</>}
+                                        {parcel.paid && <>  Unpaid</>}
+
+                                    </button>
+                                    <h1 className="font-medium flex gap-2 items-center"><FaPhoneAlt className="mt-1" />{parcel.phone}</h1>
+                                    <h1 className="flex gap-2 ">৳ 10,000</h1>
+                                    <h1 className=' font-medium'>৳ 282.19</h1>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    })
+                }
             </div>
+
+
+
+
 
         </div>
     );
