@@ -1,12 +1,15 @@
 
-import FirstRow from './FirstRow';
-import GraphSection from './GraphSection';
-import SecondRow from './secondRow';
-import ToggleSwitch from './ToggleSwitch';
+import { useState } from 'react';
+import GraphSection from './Components/GraphSection';
+import ParcelManagementOverview from './Components/ParcelManagementOverview';
+
+import ToggleSwitch from './Components/ToggleSwitch';
 
 const DashBoardPage = () => {
+    const [isToday, seIisToday] = useState(true)
     return (
-        <div className='overflow-y-auto '>
+        <div className='overflow-y-auto mb-20'>
+
             {/* Page Heading */}
             <div className='mb-10'>
                 <h1 className='text-3xl font-bold'>Dashboard</h1>
@@ -17,23 +20,19 @@ const DashBoardPage = () => {
             <div className='flex justify-end gap-4 my-7'>
                 <h1 className='text-sm'>See Your Activity</h1>
 
-                <div className=''>
+                <div onClick={()=>seIisToday(!isToday)}>
                     <ToggleSwitch />
                 </div>
 
             </div>
 
+
+
             {/* main section */}
 
-            {/* 1st row */}
+            {/* stat cards */}
             <div>
-                <FirstRow></FirstRow>
-            </div>
-
-            {/* 2nd row */}
-            <div className='mt-8'>
-
-                <SecondRow></SecondRow>
+                <ParcelManagementOverview isToday={isToday}></ParcelManagementOverview>
             </div>
 
             {/* Graph section */}

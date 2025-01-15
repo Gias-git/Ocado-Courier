@@ -1,5 +1,5 @@
 import React from 'react';
-import paymentReadyIcon from '../../assets/Icons/paymentReadyIcon.png'
+import paymentReadyIcon from '../../../assets/Icons/paymentReadyIcon.png'
 import { TbCurrencyTaka } from 'react-icons/tb';
 const PaymentReadyGenerate = () => {
     return (

@@ -54,7 +54,7 @@ const CircularProgressDashboard = () => {
     const timer = setTimeout(() => {
       setProgressGreen(90);
       setProgressOrange(70);
-      setProgressRed(22);
+      setProgressRed(28);
     }, 500); // Delay to trigger animation
     return () => clearTimeout(timer);
   }, []);

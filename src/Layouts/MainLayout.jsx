@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../Components/Navbar';
 import { Outlet } from 'react-router-dom';
 import SideBar from '../Components/SideBar';
@@ -7,8 +7,9 @@ import MobileBottomNavbar from '../Components/MobileBottomNavbar';
 import CheckActiveBalance from '../Components/CheckActiveBalance';
 
 const MainLayout = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
     return (
-        <div className='flex  font-urbanist min-h-screen  bg-[#fff5f5] '>
+        <div  className='flex  font-urbanist min-h-screen  bg-[#fff5f5] '>
 
             {/* sidebar */}
             <div className='fixed hidden lg:block z-50 border-r-2 border-[#E0E0E0] min-h-screen flex flex-col pt-[18px] items-center bg-gradient-to-b from-[#FFEDED] via-[#FFEDED] to-[#FFFFFF]'>
@@ -19,28 +20,27 @@ const MainLayout = () => {
             </div>
 
 
-            {/* main section */}
-            <div className='w-full lg:ml-[86px] '>
-                {/* navbar */}
-
-                <div className='w-full '>
-                    <Navbar></Navbar>
-                    <div className='hidden lg:block'>
-                        <StartComponent></StartComponent>
-                    </div>
-                    <div className='lg:hidden'>
-                        <CheckActiveBalance></CheckActiveBalance>
-                    </div>
-
-                 
-
+            {/* Main Section */}
+            <div className='w-full lg:ml-[86px]'>
+                {/* Sticky Navbar */}
+                <div className='sticky top-0 z-10 w-full'>
+                    <Navbar isModalOpen={isModalOpen} setModalOpen={setModalOpen}></Navbar>
                 </div>
 
-                <div className='lg:px-8 px-3 pt-1'>
+
+                <div className='hidden lg:block'>
+                    <StartComponent></StartComponent>
+                </div>
+                <div className='lg:hidden'>
+                    <CheckActiveBalance></CheckActiveBalance>
+                </div>
+
+                {/* Main Content */}
+                <div onClick={() => setModalOpen(false)} className='lg:px-8 px-3 pt-1'>
                     <Outlet></Outlet>
                 </div>
-
             </div>
+
 
 
         </div>

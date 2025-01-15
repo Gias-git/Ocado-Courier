@@ -5,19 +5,21 @@ import { FaArrowTrendDown, FaArrowTrendUp } from 'react-icons/fa6';
 
 
 
-const DeliveryParcelList = () => {
+const ProgressionSateSection = () => {
     const DeliveredProgressPercentage = 77
     const ReturnedProgressPercentage = 40
     const UnderProcessingProgressPercentage = 60
     return (
-        <div className='flex justify-evenly bg-[#FDFDFD] py-2 items-center'>
-            <div className='text-xl font-medium'>
+        <div className='flex flex-wrap justify-evenly bg-[#FDFDFD] py-2 items-center gap-5 mt-7'>
+
+            {/* Title */}
+            <div className='text-xl hidden lg:block font-medium'>
                 <h1>Delivery Parcel List | 03 Parcels</h1>
                 <hr className='border-2 border-primaryColor w-3/12' />
             </div>
 
             {/* Delivered Progress */}
-            <div className='flex justify-center items-center gap-2' >
+            <div className='flex  justify-center  items-center gap-2' >
                 <CircularProgressPercentage ProgressPercentage={DeliveredProgressPercentage} stroke={'rgba(93, 204, 119, 1)'}></CircularProgressPercentage>
                 <div>
                     <h1>Delivered</h1>
@@ -32,9 +34,9 @@ const DeliveryParcelList = () => {
 
 
 
-            
+
             {/* Returned Progress */}
-            <div className='flex justify-center items-center gap-2' >
+            <div className='flex  justify-center    items-center gap-2' >
                 <CircularProgressPercentage ProgressPercentage={ReturnedProgressPercentage} stroke={'rgb(238, 67, 67)'}></CircularProgressPercentage>
                 <div>
                     <h1>Returned</h1>
@@ -48,9 +50,9 @@ const DeliveryParcelList = () => {
             </div>
 
 
-            
+
             {/* Under Processing Progress */}
-            <div className='flex justify-center items-center gap-2' >
+            <div className='flex justify-center   items-center gap-2' >
                 <CircularProgressPercentage ProgressPercentage={UnderProcessingProgressPercentage} stroke={'rgb(255, 119, 60)'}></CircularProgressPercentage>
                 <div>
                     <h1>Under Processing</h1>
@@ -68,4 +70,4 @@ const DeliveryParcelList = () => {
     );
 };
 
-export default DeliveryParcelList;
+export default ProgressionSateSection;

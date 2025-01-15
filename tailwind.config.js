@@ -24,6 +24,15 @@ export default {
         'inset-custom': 'inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
         'left': '-2px 0px 3px 0px rgba(0, 0, 0, 0.25)', 
       },
+      animation: {
+        'slide-in-from-top': 'slideInFromTop 0.3s ease-out',
+      },
+      keyframes: {
+        slideInFromTop: {
+         '0%': { opacity: 0, transform: 'translateY(-20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+      },
     },
   },
   plugins: [require('daisyui')],

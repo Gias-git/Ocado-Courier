@@ -20,16 +20,16 @@ const PaymentRelease = () => {
                         <p className='text-[8px] lg:text-[12px] font-medium text-[#686868]'>Parcel  0</p>
                     </div>
 
-                     {/* Weight Charge */}
-                     <div className='border-l-2 border-[#FF0000] pl-1'>
-                        <h1 className='text-[8px] lg:text-[12px] font-medium text-[#686868]'>Weight Charge</h1>
+                     {/* COD Charge  */}
+                     <div className='border-l-2 border-[#0CBC63] pl-1'>
+                        <h1 className='text-[8px] lg:text-[12px] font-medium text-[#686868]'>COD Charge</h1>
                         <p className='text-[10px] font-semibold'>৳ 0</p>
                         <p className='text-[8px] lg:text-[12px] font-medium text-[#686868]'>Parcel  0</p>
                     </div>
 
                      {/* Weight Charge */}
-                     <div className='border-l-2 border-[#FF0000] pl-1'>
-                        <h1 className='text-[8px] lg:text-[12px] font-medium text-[#686868]'>Weight Charge</h1>
+                     <div className='border-l-2 border-[#249782] pl-1'>
+                        <h1 className='text-[8px] lg:text-[12px] font-medium text-[#686868]'>Delivery Charge</h1>
                         <p className='text-[10px] font-semibold'>৳ 0</p>
                         <p className='text-[8px] lg:text-[12px] font-medium text-[#686868]'>Parcel  0</p>
                     </div>

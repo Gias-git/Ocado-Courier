@@ -1,11 +1,11 @@
 import React from 'react';
-import SortingSection from './SortingSection';
+import SortingSection from './Components/SortingSection';
 import { FaBoxOpen, FaPhoneAlt, FaUser } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import { HiMiniDocumentMinus } from 'react-icons/hi2';
-import PaginationComponent from './PaginationComponent ';
+import PaginationComponent from './Components/PaginationComponent ';
 import { CiSquareCheck } from 'react-icons/ci';
-import DeliveryParcelList from './DeliveryParcelList';
+import ProgressionSateSection from './Components/PregressionsSatSection';
 
 const AllParcelList = () => {
     const parcels = [
@@ -51,15 +51,15 @@ const AllParcelList = () => {
             </div>
 
 
-            {/* Delivery Parcel List section */}
+            {/* Progression Sate Sectionsection */}
 
-            <div className='hidden lg:block'>
-                <DeliveryParcelList></DeliveryParcelList>
+            <div className=' lg:block'>
+                <ProgressionSateSection></ProgressionSateSection>
             </div>
 
 
             {/* Sorting Section */}
-            <div className='hidden lg:block'>
+            <div className=''>
                 <SortingSection></SortingSection>
             </div>
 
@@ -136,7 +136,7 @@ const AllParcelList = () => {
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="8" class="border border-gray-300 px-4 py-2 text-left">1 to 20 of 3 parcels</td>
+                            <td colSpan="8" className="border border-gray-300 px-4 py-2 text-left">1 to 20 of 3 parcels</td>
 
                         </tr>
                     </tfoot>

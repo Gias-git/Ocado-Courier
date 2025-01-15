@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { HiMiniDocumentMinus } from "react-icons/hi2";
 import { Pagination, TablePagination } from "@mui/material";
 import { useState } from "react";
-import PaginationComponent from "../AllParcelList/PaginationComponent ";
+
 import { CiSquareCheck } from "react-icons/ci";
 import { Link } from "react-router-dom";
 

@@ -1,14 +1,14 @@
-import calenderIcon from '../../assets/Icons/calendar.png'
+import calenderIcon from '../../../assets/Icons/calendar.png'
 
 const PaymentMethod = () => {
     return (
-        <div className=' pl-5 pr-6 py-4  bg-[#FFFFFF]'>
+        <div className=' pl-5 pr-6 py-2 w-full  bg-[#FFFFFF]'>
 
             <div>
-                <div className='flex py-4 gap-2'> <div> <img className='w-[20px]' src={calenderIcon} alt="" /> </div> <h1 className='text-sm font-semibold text-[#666363]'>Regular Payable</h1> </div>
+                <div className='flex py-2 gap-2'> <div> <img className='w-[20px]' src={calenderIcon} alt="" /> </div> <h1 className='text-sm font-semibold text-[#666363]'>Regular Payable</h1> </div>
                 <h1 className='text-[12px] font-medium'>Get paid within 2-3 days of delivery</h1>
             </div>
-            <hr className='border-2 my-3' />
+            <hr className='border-2 my-2' />
 
             <div className='flex justify-between'>
                 <div>

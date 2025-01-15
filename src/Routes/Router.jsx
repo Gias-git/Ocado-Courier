@@ -16,6 +16,7 @@ import EditProfileLayout from '../Pages/EditProfile/EditProfileLayout';
 import ChangePasswordPage from '../Pages/EditProfile/ChangePasswordpage';
 import PaymentUpdate from '../Pages/PaymentUpdate/PaymentUpdate';
 import ParcelView from '../Pages/ParcelView/ParcelView';
+import PaymentChildrenView from '../Pages/PaymentChildrenView/PaymentChildrenView';
 
 
 
@@ -53,7 +54,18 @@ const router = createBrowserRouter([
             },
             {
                 path: "/paymentInvoiceList",
-                element: <PaymentInvoiceList></PaymentInvoiceList>
+                element: <> <Outlet></Outlet> </>,
+                children: [{
+                    path: "",
+                    element: <PaymentInvoiceList></PaymentInvoiceList>
+                },
+                {
+                    path: "paymentChildrenView",
+                    element: <PaymentChildrenView></PaymentChildrenView>
+                },
+
+
+                ]
             },
             {
                 path: "profile",

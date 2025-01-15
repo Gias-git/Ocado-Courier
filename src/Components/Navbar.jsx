@@ -3,10 +3,21 @@ import StartComponent from './StartComponent';
 import navImg from '../assets/navImg.png'
 import CheckActiveBalance from './CheckActiveBalance';
 import { IoIosArrowDown } from 'react-icons/io';
+import NotificationModal from './NotificationModal';
+import { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = ({isModalOpen, setModalOpen}) => {
+    
+    // const [isModalOpen, setModalOpen] = useState(false);
+//    {modal && setModalOpen(modal)}
+    const notifications = [
+        { date: "01-11-24", message: "This is your first notification message!" },
+        { date: "01-11-24", message: "This is your first notification message!" },
+        { date: "01-11-24", message: "This is your first notification message!" },
+        { date: "01-11-24", message: "This is your first notification message!" },
+    ];
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar  bg-base-100  top-0">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -65,7 +76,10 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                <button className="btn btn-ghost  border-primaryColor">
+
+
+                <button onClick={() => setModalOpen(!isModalOpen)} className="btn  btn-ghost  border-primaryColor">
+
                     <div className="indicator">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +93,7 @@ const Navbar = () => {
                                 strokeWidth="2"
                                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                         </svg>
-                        <span className="badge badge-xs badge-primary indicator-item bg-primaryColor border-none text-[#ffff]">1</span>
+                        <span className="badge badge-xs badge-primary indicator-item bg-primaryColor border-none py-2 text-[#ffff]">{notifications.length}</span>
                     </div>
                 </button>
                 <button className="btn btn-ghost btn-circle">
@@ -96,6 +110,8 @@ const Navbar = () => {
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </button>
+
+
 
                 {/* Profile  */}
                 <div className='hidden lg:block '>
@@ -140,7 +156,12 @@ const Navbar = () => {
 
             </div>
 
-
+            <div className='absolute top-24 right-3 lg:right-40 z-50'>
+                <NotificationModal
+                    isOpen={isModalOpen}
+                    notifications={notifications}
+                />
+            </div>
         </div>
     );
 };

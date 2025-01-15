@@ -13,9 +13,9 @@ const MobileBottomNavbar = () => {
                 <h1 className='text-[10px] font-semibold text-primaryColor'>Dashboard</h1>
             </div>
 
-            <div class="flex justify-center  items-center -mt-10">
-                <div class="w-14 h-14 bg-[#ffff]  rounded-full shadow-md flex items-center justify-center  border-gray-200">
-                    <span class="text-black text-4xl font-extralight">+</span>
+            <div className="flex justify-center  items-center -mt-10">
+                <div className="w-14 h-14 bg-[#ffff]  rounded-full shadow-md flex items-center justify-center  border-gray-200">
+                    <span className="text-black text-4xl font-extralight">+</span>
                 </div>
             </div>
 
