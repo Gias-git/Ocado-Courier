@@ -18,7 +18,6 @@ const RequestList = () => {
 
 
     const handleChangeRowsPerPage = () => {
-        console.log(value)
         setRowsPerPage(parseInt(event.target.value));
         const totalPages = Math.ceil(totalItems / rowsPerPage); // Calculate total pages
         setPage(totalPages); // Reset page when rows per page change

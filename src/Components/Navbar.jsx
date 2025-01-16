@@ -6,10 +6,10 @@ import { IoIosArrowDown } from 'react-icons/io';
 import NotificationModal from './NotificationModal';
 import { useState } from 'react';
 
-const Navbar = ({isModalOpen, setModalOpen}) => {
-    
+const Navbar = ({ isModalOpen, setModalOpen }) => {
+
     // const [isModalOpen, setModalOpen] = useState(false);
-//    {modal && setModalOpen(modal)}
+    //    {modal && setModalOpen(modal)}
     const notifications = [
         { date: "01-11-24", message: "This is your first notification message!" },
         { date: "01-11-24", message: "This is your first notification message!" },
@@ -123,9 +123,28 @@ const Navbar = ({isModalOpen, setModalOpen}) => {
                             <h1 className='text-sm font-bold'>Shop Name</h1>
                             <p className='text-[12px] text-[#565656]'>5555555</p>
                         </div>
-                        <div className='border-2 border-[#5C5C5C] rounded-full flex justify-center items-center h-6 w-6'>
-                            <IoIosArrowDown />
+                        <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className=" m-1"> <IoIosArrowDown /></div>
+                            <ul tabIndex={0} className="dropdown-content menu bg-base-100  z-[1] w-64 mt-12 p-2 shadow">
+                                <li><a>Item 1</a></li>
+                                <li><a>Item 2</a></li>
+                            </ul>
                         </div>
+                        {/* <div tabIndex={0} role="button" className='border-2 dropdown border-[#5C5C5C] rounded-full flex justify-center items-center h-6 w-6'>
+                           
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100  z-[1] mt-40  w-72 p-2 shadow">
+                                <li>
+                                    <a className="justify-between">
+                                        Profile
+                                        <span className="badge">New</span>
+                                    </a>
+                                </li>
+                                <li><a>Settings</a></li>
+                                <li><a>Logout</a></li>
+                            </ul>
+                        </div> */}
                     </div>
                 </div>
 

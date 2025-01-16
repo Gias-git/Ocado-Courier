@@ -7,9 +7,9 @@ import { AiOutlinePoweroff } from 'react-icons/ai';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { BsClipboard2PlusFill, BsClipboardPlusFill } from 'react-icons/bs';
-import { FaBoxOpen } from 'react-icons/fa';
+import { FaBoxOpen, FaMoneyCheckAlt } from 'react-icons/fa';
 import { HiDocumentText } from 'react-icons/hi2';
-import { MdLogout } from 'react-icons/md';
+import { MdLogout, MdOutlinePayments } from 'react-icons/md';
 
 const SideBar = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -17,7 +17,7 @@ const SideBar = () => {
         setIsHovered(true);
     };
 
-    console.log(isHovered)
+
 
     const handleMouseLeave = () => {
         setIsHovered(false);
@@ -133,7 +133,7 @@ const SideBar = () => {
                             className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
                         >
                             <div>
-                                <HiDocumentText className="text-2xl" />
+                                <MdOutlinePayments   className="text-2xl" />
                             </div>
                             <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
                                 Payment Invoice List

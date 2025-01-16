@@ -151,7 +151,7 @@ const SortingSection = () => {
                 </div>
 
                 {/* By date filter */}
-                <div>
+                <div className=''>
                     {/* Date Picker */}
                     <div className="w-full lg:w-auto">
                         <RangePicker
@@ -164,7 +164,7 @@ const SortingSection = () => {
 
 
 
-                
+
                 <div className='flex gap-4  flex-col'>
 
 

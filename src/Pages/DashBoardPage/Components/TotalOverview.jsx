@@ -8,7 +8,7 @@ const { RangePicker } = DatePicker;
 const TotalOverview = () => {
 
     const [dates, setDates] = useState([])
-    console.log(dates)
+   
 
     return (
         <div>

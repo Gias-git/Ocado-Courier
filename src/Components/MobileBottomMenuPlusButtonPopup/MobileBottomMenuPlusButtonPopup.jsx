@@ -2,50 +2,57 @@ import addParcelBg from '../../assets/Icons/addParcelBackground.png'
 import addParcelIcon from '../../assets/Icons/mobileAddParcelIcon.png'
 import allParcelBackground from '../../assets/Icons/allParcelBackground.png'
 import ExpressDeliveryBg from '../../assets/Icons/bulkImportBg.png'
+import { Link } from 'react-router-dom';
 
 const MobileBottomMenuPlusButtonPopup = ({ isMobileBottomPopupOpen, setIsMobileBottomPopupOpen }) => {
 
-    console.log(isMobileBottomPopupOpen)
     return (
-        <div className={`flex gap-5 justify-center items-center transition-transform duration-700 ease-in-out mx-auto py-1 ${isMobileBottomPopupOpen && 'transform translate-y-0'}  ${isMobileBottomPopupOpen || 'transform translate-y-40'}   `}>
-            <div>
-                <div
-                    className="w-[50px] h-[50px] relative   flex items-center justify-center">
-                    <img className='w-[50px] h-[50px] ' src={addParcelBg} alt="Parcel Icon" />
+        <div
+            className={`flex min-h-48 -mb-44  gap-5 justify-center items-top transition-transform duration-700 ease-in-out mx-auto py-1 origin-center ${isMobileBottomPopupOpen ? 'rotate-0 ' : '-rotate-180 '
+                }`}
+        >
 
-                    <img className='w-[22px] absolute inset-4' src={addParcelIcon} alt="" />
-                </div>
+            <div className=''>
+                <Link to='/addParcel'>
+                    <div
+                        className="w-[50px] h-[50px] relative   flex items-center justify-center">
+                        <img className='w-[50px] h-[50px] ' src={addParcelBg} alt="Parcel Icon" />
+
+                        <img className='w-[22px] absolute inset-4' src={addParcelIcon} alt="" />
+                    </div>
+                </Link>
             </div>
 
 
             <div className='-mt-14'>
-                <div
-                    className="w-[50px] h-[50px] relative   flex items-center justify-center"
+                <Link to='/allParcelList'>
+                    <div
+                        className="w-[50px] h-[50px] relative   flex items-center justify-center"
 
-                >
-                    <img className='w-[50px] h-[50px] ' src={allParcelBackground} alt="Parcel Icon" />
+                    >
+                        <img className='w-[50px] h-[50px] ' src={allParcelBackground} alt="Parcel Icon" />
 
-                    <img className='w-[22px] absolute inset-4' src={addParcelIcon} alt="" />
-                </div>
+                        <img className='w-[22px] absolute inset-4' src={addParcelIcon} alt="" />
+                    </div>
+
+                </Link>
             </div>
 
 
             <div>
-                <div
-                    className="w-[50px] h-[50px] relative   flex items-center justify-center"
+                <Link to='/allParcelList'>
+                    <div
+                        className="w-[50px] h-[50px] relative   flex items-center justify-center"
 
-                >
-                    <img className='w-[50px] h-[50px] ' src={ExpressDeliveryBg} alt="Parcel Icon" />
+                    >
+                        <img className='w-[50px] h-[50px] ' src={ExpressDeliveryBg} alt="Parcel Icon" />
 
-                    <img className='w-[22px] absolute inset-4' src={addParcelIcon} alt="" />
-                </div>
+                        <img className='w-[22px] absolute inset-4' src={addParcelIcon} alt="" />
+                    </div>
+                </Link>
             </div>
 
-            {/* close Button */}
 
-            <button onClick={()=>setIsMobileBottomPopupOpen(false)} className='w-8 h-8 rounded-full bg-white absolute mt-14 shadow-lg flex justify-center items-center'>
-                <h1 className='font-semibold'> X </h1>
-            </button>
 
         </div>
     );

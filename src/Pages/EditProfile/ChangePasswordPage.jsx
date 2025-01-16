@@ -7,43 +7,35 @@ const ChangePasswordPage = () => {
             <form className='grid grid-cols-1 lg:grid-cols-2 px-12 w-full gap-8'>
 
 
-                {/* Business Name Field */}
+                {/* Current Password Field */}
                 <div className='space-y-2 order-2 md:order-1 '>
-                    <h1 className='text-lg font-medium'>Business Name </h1>
+                    <h1 className='text-lg font-medium'>Current Password</h1>
                     <input required
-                        type="text"
-                        placeholder="Shop name"
+                        type="password"
+                        placeholder="Enter your current password"
                         className="input input-bordered  w-full " />
                 </div>
 
-                {/* Business Name Field */}
+                {/* New Password Field */}
                 <div className='space-y-2 order-2 md:order-1 '>
-                    <h1 className='text-lg font-medium'>Business Name </h1>
+                    <h1 className='text-lg font-medium'>New Password </h1>
                     <input required
-                        type="text"
-                        placeholder="Shop name"
-                        className="input input-bordered  w-full " />
-                </div>
-
-
-                {/* Business Name Field */}
-                <div className='space-y-2 order-2 md:order-1 '>
-                    <h1 className='text-lg font-medium'>Business Name </h1>
-                    <input required
-                        type="text"
-                        placeholder="Shop name"
+                        type="password"
+                        placeholder="Enter your new password"
                         className="input input-bordered  w-full " />
                 </div>
 
 
-                {/* Business Name Field */}
+                {/* Confirm Password Field */}
                 <div className='space-y-2 order-2 md:order-1 '>
-                    <h1 className='text-lg font-medium'>Business Name </h1>
+                    <h1 className='text-lg font-medium'>Confirm Password </h1>
                     <input required
-                        type="text"
-                        placeholder="Shop name"
+                        type="password"
+                        placeholder="Enter your confirm password"
                         className="input input-bordered  w-full " />
                 </div>
+
+
 
             </form>
         </div>

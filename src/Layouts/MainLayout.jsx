@@ -23,7 +23,7 @@ const MainLayout = () => {
             </div>
 
             <div className='fixed  bottom-0 z-50 w-full bg-[#ffff] py-2 px-4'>
-                <MobileBottomNavbar setIsMobileBottomPopupOpen={setIsMobileBottomPopupOpen}></MobileBottomNavbar>
+                <MobileBottomNavbar isMobileBottomPopupOpen={isMobileBottomPopupOpen} setIsMobileBottomPopupOpen={setIsMobileBottomPopupOpen}></MobileBottomNavbar>
             </div>
 
 

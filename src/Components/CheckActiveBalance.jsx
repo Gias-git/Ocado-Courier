@@ -6,7 +6,7 @@ import balanceIcon from '../assets/Icons/balanceIcon.png'
 const CheckActiveBalance = () => {
 
     const [balanceShow, setBalanceShow] = useState(false)
-    console.log(balanceShow)
+
 
     return (
         <div onClick={() => setBalanceShow(!balanceShow)} className='bg-[#FFF9F9] overflow-hidden border-2 border-primaryColor w-[272px] rounded-3xl flex mx-auto lg:mt-4 mt-6 mb-4 '>
