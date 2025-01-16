@@ -13,10 +13,10 @@ const ProfileLayout = () => {
 
             {/* profile Main Layout */}
 
-            <div className='flex gap-8'>
+            <div className='flex flex-col lg:flex-row gap-8'>
 
                 {/* Profile Details Left section  */}
-                <div className='min-h-[614px] bg-white w-3/12 mb-10 rounded-lg'>
+                <div className='min-h-[614px] bg-white lg:w-3/12 mb-10 rounded-lg'>
                     <ProfileSideBar></ProfileSideBar>
                 </div>
 

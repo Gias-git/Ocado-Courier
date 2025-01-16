@@ -3,24 +3,24 @@ import React from 'react';
 import { GrDocumentText } from 'react-icons/gr';
 import CircularProgressInvoice from './CircularProgrssInvoice';
 
-const CircularProgression = () => {
-    const totalInvoice = 40
+const CircularProgression = ({title, balance, count, iconName, outlineCOlor}) => {
+    
     return (
         <div className=' flex flex-col justify-center items-center'>
             <div className='relative'>
                 <div className='bg-white w-16 h-16 text-base gap-2 font-bold rounded-full flex flex-col justify-center absolute top-4 left-4  items-center'>
-                    <div className='text-[#16A7D3] text-2xl'>
-                        <GrDocumentText></GrDocumentText>
+                    <div className={`text-[${outlineCOlor}] text-2xl`}>
+                       {iconName}
                     </div>
-                    <h1>{totalInvoice}</h1>
+                    <h1>{count}</h1>
                 </div>
-                <CircularProgressInvoice ProgressPercentage={totalInvoice}></CircularProgressInvoice>
+                <CircularProgressInvoice stroke={outlineCOlor} ProgressPercentage={count}></CircularProgressInvoice>
             </div>
 
 
             <div className='flex justify-center items-center flex-col'>
-                <h1>Total Invoice</h1>
-                <p className='font-semibold'>৳ 194192</p>
+                <h1>{title}</h1>
+                <p className='font-semibold'>{balance}</p>
             </div>
         </div>
     );

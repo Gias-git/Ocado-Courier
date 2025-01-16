@@ -2,9 +2,9 @@ import React from 'react';
 
 const EditProfilePage = () => {
     return (
-        <div>
+        <div className='mt-10'>
             {/* form container */}
-            <form className='grid grid-cols-2 px-12 w-full gap-8'>
+            <form className='grid grid-cols-1 lg:grid-cols-2 px-4 lg:px-12 w-full gap-8'>
 
 
                 {/* Business Name Field */}

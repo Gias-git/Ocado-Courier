@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SortingSection from './Components/SortingSection';
 import { FaBoxOpen, FaPhoneAlt, FaUser } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
@@ -8,8 +8,12 @@ import { CiSquareCheck } from 'react-icons/ci';
 import ProgressionSateSection from './Components/PregressionsSatSection';
 
 const AllParcelList = () => {
+    const [isAllSelected, setIsAllSelected] = useState(false)
+    const [selectedParcels, setSelectedParcels] = useState({});
+
     const parcels = [
         {
+            id: 1, // Unique ID for each parcel
             creationDate: "28/09/2024",
             creationTime: "08:24 AM",
             parcelID: "54458724543",
@@ -26,6 +30,24 @@ const AllParcelList = () => {
             paid: false,
         },
         {
+            id: 2,
+            creationDate: "28/09/2024",
+            creationTime: "08:24 AM",
+            parcelID: "54458724543",
+            orderID: "644",
+            customerName: "Abdul Golam",
+            address: "Mirpur DOHS aaaaaaaaaa Central Masjid, Road No. 7, Avenue 8",
+            phone: "01636073552",
+            parcelStatus: true,
+            deliveryNote: "Note: kalkel delivery ante hobe",
+            collectedAmount: "45,219",
+            value: "50,000",
+            charge: "582.19",
+            actions: ["View", "Edit"],
+            paid: true,
+        },
+        {
+            id: 3,
             creationDate: "28/09/2024",
             creationTime: "08:24 AM",
             parcelID: "54458724543",
@@ -41,9 +63,32 @@ const AllParcelList = () => {
             actions: ["View", "Edit"],
             paid: true,
         }
-    ]
+    ];
+
+    // Handle "Select All"
+    const handleSelectAll = () => {
+        const newSelectionState = {};
+        if (!isAllSelected) {
+            parcels.forEach((parcel) => {
+                newSelectionState[parcel.id] = true;
+            });
+        }
+        setSelectedParcels(newSelectionState);
+        setIsAllSelected(!isAllSelected);
+    };
+
+    // Handle individual checkbox
+    const handleSelectIndividual = (id) => {
+        const newSelectionState = { ...selectedParcels, [id]: !selectedParcels[id] };
+        setSelectedParcels(newSelectionState);
+
+        // Update "Select All" state
+        const allSelected = parcels.every((parcel) => newSelectionState[parcel.id]);
+        setIsAllSelected(allSelected);
+    };
+
     return (
-        <div className='mt-6'>
+        <div className='mt-6 mb-20'>
 
             {/* Hading */}
             <div>
@@ -70,7 +115,14 @@ const AllParcelList = () => {
                 <table className="w-full rounded-lg bg-white">
                     <thead className="rounded-lg">
                         <tr className="bg-[#FAFAFA] text-sm font-medium text-[#152934D9] my-4 ">
-                            <th className="border border-gray-200 px-4 py-2 border-l-2 text-4xl"> <CiSquareCheck /></th>
+                        <th onClick={handleSelectAll} className="border border-gray-200 px-4 py-2 border-l-2 text-4xl">
+                                <input
+                                    type="checkbox"
+                                    className="checkbox border-[#E83330] [--chkbg:#E83330] [--chkfg:white] checked:border-[#E83330]"
+                                    checked={isAllSelected}
+                                    onChange={handleSelectAll}
+                                />
+                            </th>
                             <th className="border border-gray-200 px-4 py-2 border-l-2">Creation Info</th>
                             <th className="border border-gray-200 px-4 py-2">Parcel ID</th>
                             <th className="border border-gray-200 px-4 py-2">Customer Details</th>
@@ -84,9 +136,11 @@ const AllParcelList = () => {
                         {parcels.map((parcel, index) => (
                             <tr key={index} className="border-t">
                                 <td className="border px-4 py-2 text-center">
-                                    <input
+                                <input
                                         type="checkbox"
                                         className="checkbox border-[#E83330] [--chkbg:#E83330] [--chkfg:white] checked:border-[#E83330]"
+                                        checked={!!selectedParcels[parcel.id]}
+                                        onChange={() => handleSelectIndividual(parcel.id)}
                                     />
                                 </td>
                                 <td className="border px-4 py-2 text-center">

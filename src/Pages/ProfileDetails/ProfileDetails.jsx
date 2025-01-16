@@ -8,7 +8,7 @@ const ProfileDetails = () => {
             <h1 className='text-[15px] font-lato font-semibold mb-10 px-8 py-8'>Profile Details</h1>
 
             {/* form container */}
-            <form className='grid grid-cols-2 px-12 w-full gap-8'>
+            <form className='grid grid-cols-1 lg:grid-cols-2 px-4 lg:px-12 w-full gap-8'>
 
 
                 {/* Business Name Field */}
