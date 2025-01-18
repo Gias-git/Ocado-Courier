@@ -4,7 +4,6 @@ import { FaBoxOpen, FaPhoneAlt, FaUser } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import { HiMiniDocumentMinus } from 'react-icons/hi2';
 import PaginationComponent from './Components/PaginationComponent ';
-import { CiSquareCheck } from 'react-icons/ci';
 import ProgressionSateSection from './Components/PregressionsSatSection';
 
 const AllParcelList = () => {
@@ -88,7 +87,7 @@ const AllParcelList = () => {
     };
 
     return (
-        <div className='mt-6 mb-20'>
+        <div className='mt-6 mb-64'>
 
             {/* Hading */}
             <div>

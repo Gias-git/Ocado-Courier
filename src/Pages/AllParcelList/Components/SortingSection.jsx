@@ -1,7 +1,34 @@
 
 import { DatePicker, Space } from 'antd';
+import { useState } from 'react';
 const { RangePicker } = DatePicker;
+
 const SortingSection = () => {
+    const [dates, setDates] = useState(null);
+    const [mobileDateFilterFirstDate, setMobileDateFilterFirstDate] = useState(null);
+    const [mobileDateFilterSecondDate, setMobileDateFilterSecondDate] = useState(null);
+
+
+    const handleFirstDateChange = (date, dateString) => {
+        setMobileDateFilterFirstDate(dateString);
+        if (dateString && mobileDateFilterSecondDate) {
+            setDates([dateString, mobileDateFilterSecondDate]);
+        }
+    };
+
+    const handleSecondDateChange = (date, dateString) => {
+        setMobileDateFilterSecondDate(dateString);
+        if (mobileDateFilterFirstDate && dateString) {
+            setDates([mobileDateFilterFirstDate, dateString]);
+        }
+    };
+
+    console.log(dates)
+
+    // For Desktop
+    const handleDateChange = (dates, dateStrings) => {
+        setDates(dateStrings);
+    };
     return (
         <div className='flex flex-col gap-4 lg:flex-row lg:justify-evenly items-center bg-white border-[0.5px] rounded-md  py-4 mt-4 '>
 
@@ -15,25 +42,13 @@ const SortingSection = () => {
                 <div>
                     {/* Date Picker */}
                     <div className="w-full lg:w-auto">
-                        <RangePicker
-                            style={{ width: '100%' }}
-                            onChange={(dates) => setDates(dates)}
-                        />
+                    <RangePicker
+                                style={{ width: '100%' }}
+                                onChange={handleDateChange}
+                                placeholder={['Start Date', 'End Date']}
+                                format="DD-MM-YYYY"
+                            />
                     </div>
-                    {/* <div className="flex items-center border rounded-md px-4 py-2 ">
-                    <input
-                        type="date"
-                        placeholder="Start date"
-                        className="flex-1 outline-none bg-transparent text-gray-700 placeholder-gray-400"
-                    />
-                    <span className="mx-2 text-gray-500">↔</span>
-                    <input
-                        type="date"
-                        placeholder="End date"
-                        className="flex-1 outline-none bg-transparent text-gray-700 placeholder-gray-400"
-                    />
-
-                </div> */}
                 </div>
 
                 {/* Filter by parcel Id name/phone */}
@@ -64,9 +79,6 @@ const SortingSection = () => {
                         <option>Greedo</option>
                     </select>
                 </div>
-
-
-
 
                 <div className='flex gap-6 flex-col lg:flex-row'>
 
@@ -150,14 +162,22 @@ const SortingSection = () => {
                     </select>
                 </div>
 
-                {/* By date filter */}
-                <div className=''>
-                    {/* Date Picker */}
-                    <div className="w-full lg:w-auto">
-                        <RangePicker
+                {/* SOrt By Date */}
+                <div className="">
+                    <div className="w-full flex gap-6">
+                        <DatePicker
                             style={{ width: '100%' }}
-                            onChange={(dates) => setDates(dates)}
+                            placeholder="Select From"
+                            format="DD-MM-YYYY"
+                            onChange={handleFirstDateChange} // Use specific handler for first date
                         />
+                        <DatePicker
+                            style={{ width: '100%' }}
+                            placeholder="Select To"
+                            format="DD-MM-YYYY"
+                            onChange={handleSecondDateChange} // Use specific handler for second date
+                        />
+
                     </div>
                 </div>
 

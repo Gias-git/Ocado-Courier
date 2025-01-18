@@ -16,7 +16,7 @@ const ParcelManagementOverview = ({ isToday }) => {
 
 
             {/* pick request */}
-            <div className='flex bg-[#FFFFFF] order-1  relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#a60c0c]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
+           <a href="#" className='flex bg-[#FFFFFF]  order-1  relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#a60c0c]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
 
                 <div className=''>
                     <h1 className='text-2xl font-bold'> {isToday && 30} {isToday || 130}</h1>
@@ -29,11 +29,11 @@ const ParcelManagementOverview = ({ isToday }) => {
                 <div className='absolute top-3 right-3'>
                     <img className='h-14 lg:w-16 w-14 lg:h-16' src={PickRequest} alt="" />
                 </div>
-            </div>
+            </a>
 
 
             {/* parcelProcess request */}
-            <div className='flex bg-[#FFFFFF] order-2 relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#C65F32]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
+            <a href="#" className='flex bg-[#FFFFFF] order-2 relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#C65F32]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
 
                 <div className=''>
                     <h1 className='text-2xl font-bold'>{isToday && 70} {isToday || 1130}</h1>
@@ -46,12 +46,12 @@ const ParcelManagementOverview = ({ isToday }) => {
                 <div className='absolute top-3 right-3'>
                     <img className='h-14 lg:w-16 w-14 lg:h-16' src={parcelProcess} alt="" />
                 </div>
-            </div>
+            </a>
 
 
 
             {/* Ready For Delivery */}
-            <div className='flex bg-[#FFFFFF] order-3 relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#12806B]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
+            <a href="#" className='flex bg-[#FFFFFF] order-3 relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#12806B]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
 
                 <div className=''>
                     <h1 className='text-2xl font-bold'>{isToday && 310} {isToday || 1130}</h1>
@@ -64,12 +64,12 @@ const ParcelManagementOverview = ({ isToday }) => {
                 <div className='absolute top-3 right-3'>
                     <img className='h-14 lg:w-16 w-14 lg:h-16' src={ReadyForDelivery} alt="" />
                 </div>
-            </div>
+            </a>
 
 
 
             {/* Delivered */}
-            <div className='flex bg-[#FFFFFF] order-4 relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#1EC672]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
+            <a href="#" className='flex bg-[#FFFFFF] order-4 relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#1EC672]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
 
                 <div className=''>
                     <h1 className='text-2xl font-bold'>{isToday && 230} {isToday || 11330}</h1>
@@ -82,12 +82,12 @@ const ParcelManagementOverview = ({ isToday }) => {
                 <div className='absolute top-3 right-3'>
                     <img className='h-14 lg:w-16 w-14 lg:h-16' src={Delivered} alt="" />
                 </div>
-            </div>
+            </a>
 
 
 
             {/* On Hold */}
-            <div className='flex bg-[#FFFFFF] order-5 relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#a60c0c]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
+            <a href="#" className='flex bg-[#FFFFFF] order-5 relative justify-between rounded-xl py-4 pl-5 pr-6 border-b-4 border-[#a60c0c]  shadow-[6px_6px_54px_0px_rgba(0,0,0,0.05)]'>
 
                 <div className=''>
                     <h1 className='text-2xl font-bold'>{isToday && 70} {isToday || 120}</h1>
@@ -100,7 +100,7 @@ const ParcelManagementOverview = ({ isToday }) => {
                 <div className='absolute top-3 right-3'>
                     <img className='h-14 lg:w-16 w-14 lg:h-16' src={OnHold} alt="" />
                 </div>
-            </div>
+            </a>
 
 
             {/* paymentReadyGenerate */}

@@ -11,8 +11,8 @@ import { FaBoxOpen, FaMoneyCheckAlt } from 'react-icons/fa';
 import { HiDocumentText } from 'react-icons/hi2';
 import { MdLogout, MdOutlinePayments } from 'react-icons/md';
 
-const SideBar = () => {
-    const [isHovered, setIsHovered] = useState(false);
+const SideBar = ({isHovered, setIsHovered}) => {
+    
     const handleMouseEnter = () => {
         setIsHovered(true);
     };

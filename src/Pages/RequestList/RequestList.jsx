@@ -67,7 +67,7 @@ const RequestList = () => {
 
             {/* Input & sorting section */}
 
-            <div className="hidden lg:block">
+            <div className="">
                 <SortingHeading></SortingHeading>
             </div>
 
@@ -89,7 +89,7 @@ const RequestList = () => {
                             <th className="border border-gray-200 px-4 py-2">Parcel Status</th>
                             <th className="border border-gray-200 px-4 py-2">Delivery Note</th>
                             <th className="border border-gray-200 px-4 py-2">Amount</th>
-                            <th className="border border-gray-200 px-4 py-2  shadow-left ">Action</th>
+                            <th className="border border-gray-200 px-4 py-2  ">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -132,7 +132,7 @@ const RequestList = () => {
                                     <p> <span className="font-semibold">  Value: </span>  ৳ {parcel.value}</p>
                                     <p><span className="font-semibold">Charge: </span>  ৳ {parcel.charge}</p>
                                 </td>
-                                <td className="border p-12 shadow-left ">
+                                <td className="border p-12">
                                     <div className="flex flex-col space-y-2">
                                        <Link to='/requestList/parcelView' className="block  px-4 py-2 text-[white] bg-[#E83330] rounded-md text-center"><button className="">View</button> </Link> 
                                         <button className="text-[#E83330] bg-[white] px-4 py-2 border-2 border-[#E83330] rounded-md">Edit</button>
