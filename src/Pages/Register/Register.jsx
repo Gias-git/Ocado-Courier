@@ -122,14 +122,14 @@ const Register = () => {
 
 
                     {/* Password Container */}
-                    <div className='flex justify-between gap-4'>
+                    <div className='flex justify-between flex-col md:flex-row gap-4'>
 
                         {/* Password */}
                         <div className=" relative ">
                             <label className="label">
                                 <span className="text-[#717579]">Password</span>
                             </label>
-                            <input type="password" placeholder="*********" className="input input-bordered w-44 focus:outline-none focus:border-[#E83330]" required />
+                            <input type="password" placeholder="*********" className="input input-bordered w-full md:w-44 focus:outline-none focus:border-[#E83330]" required />
                             <div className='absolute right-2 top-12'>
                                 <CiLock className='text-2xl text-[#989898]' />
                             </div>
@@ -141,7 +141,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="text-[#717579]">Confirm Password</span>
                             </label>
-                            <input type="password" placeholder="*********" className="input input-bordered w-44 focus:outline-none focus:border-[#E83330]" required />
+                            <input type="password" placeholder="*********" className="input input-bordered w-full md:w-44 focus:outline-none focus:border-[#E83330]" required />
                             <div className='absolute right-2 top-12'>
                                 <CiLock className='text-2xl text-[#989898]' />
                             </div>

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { DatePicker, Space } from 'antd';
 import { GrDocumentText } from 'react-icons/gr';
 import { LuRefreshCcw } from 'react-icons/lu';
-import { FaDownload, FaPrint } from 'react-icons/fa';
+import { FaArrowRight, FaDownload, FaPrint } from 'react-icons/fa';
 import { CiSearch } from 'react-icons/ci';
 import CircularProgressDashboard from './CircularProgress';
+import { BsArrowDownRight } from 'react-icons/bs';
 
 const { RangePicker } = DatePicker;
 
@@ -80,7 +81,7 @@ const TotalOverview = () => {
                 </div>
 
                 <div >
-                    <h1 className='text-sm font-semibold text-primaryColor text-right'>View More </h1>
+                    <h1 className='text-sm font-semibold text-primaryColor text-right flex justify-end gap-3 items-center'>View More <FaArrowRight></FaArrowRight></h1>
                 </div>
             </div>
 

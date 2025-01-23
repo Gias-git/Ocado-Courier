@@ -3,6 +3,7 @@ import deliveryBox from '../../assets/Background/deliveryBox.png'
 import deliveryman from '../../assets/Background/deliveryman.png'
 import drone from '../../assets/Background/drone.png'
 import bgIcons from '../../assets/Background/bgicons.png'
+import { Link } from 'react-router-dom'
 
 const LoginPage = () => {
     return (
@@ -57,11 +58,23 @@ const LoginPage = () => {
                         <input type="password" placeholder="password" className="input input-bordered focus:outline-none focus:border-[#E83330]" required />
 
                     </div>
+                    {/* checked button */}
+                    <div className='flex gap-3'>
+                        <input
+                            type="checkbox"
+                            className="checkbox border-[#E83330] [--chkbg:#E83330] [--chkfg:white] checked:border-[#E83330]"
+                        />
+                        <h1 className='text-[#717579]'>Remember password</h1>
+                    </div>
                     <div className="form-control mt-6">
                         <button className="btn bg-primaryColor text-white">Login</button>
                     </div>
                 </form>
+                <div className='py-10'>
+                    <h1 className='text-[#AAA3A0] font-lato text-center'>Don't have account?? <Link to='/register' className='text-primaryColor'>Register</Link>   Here</h1>
+                </div>
             </div>
+
         </div>
     );
 };
