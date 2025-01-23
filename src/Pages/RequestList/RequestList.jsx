@@ -58,7 +58,7 @@ const RequestList = () => {
         }
     ]
     return (
-        <div className='mt-6 mb-10'>
+        <div className='mt-6 pb-20'>
             {/* Hading */}
             <div>
                 <h1 className='text-2xl font-bold font-lato'>Parcel Request List</h1>
@@ -78,7 +78,7 @@ const RequestList = () => {
 
 
             {/* Desktop View */}
-            <div className="hidden md:block   mt-3">
+            <div className="hidden  lg:w-[900px] xl:w-full lg:block overflow-x-scroll  mt-3">
                 <table className="w-full rounded-lg bg-white">
                     <thead className="rounded-lg">
                         <tr className="bg-[#FAFAFA] text-sm font-medium text-[#152934D9] my-4 ">
@@ -86,7 +86,7 @@ const RequestList = () => {
                             <th className="border border-gray-200 px-4 py-2 border-l-2">Creation Info</th>
                             <th className="border border-gray-200 px-4 py-2">Parcel ID</th>
                             <th className="border border-gray-200 px-4 py-2">Customer Details</th>
-                            <th className="border border-gray-200 px-4 py-2">Parcel Status</th>
+                            <th className="border border-gray-200 px-4 py-2 ">Parcel Status</th>
                             <th className="border border-gray-200 px-4 py-2">Delivery Note</th>
                             <th className="border border-gray-200 px-4 py-2">Amount</th>
                             <th className="border border-gray-200 px-4 py-2  ">Action</th>
@@ -102,7 +102,7 @@ const RequestList = () => {
                                     {parcel.creationTime}
                                 </td>
                                 <td className="border px-4 py-2">
-                                    <span className="text-red-500">{parcel.parcelID}</span>
+                                   <a href="#"><span className="text-red-500">{parcel.parcelID}</span></a> 
                                     <br />
                                     Order ID: {parcel.orderID}
                                 </td>
@@ -115,9 +115,9 @@ const RequestList = () => {
 
 
                                 </td>
-                                <td className="border px-4 py-2">
+                                <td className="border  px-4 py-2">
                                     <button
-                                        className={`px-2 py-1 flex gap-3 justify-center items-center text-sm font-semibold rounded ${parcel.parcelStatus ? "bg-[#FFBEBE99] text-red-700"
+                                        className={`px-2 py-1 mx-auto flex gap-3 justify-center items-center text-sm font-semibold rounded ${parcel.parcelStatus ? "bg-[#FFBEBE99] text-red-700"
                                             : "bg-[#16E36826] text-[#14885F]"
                                             }`}
                                     >
@@ -154,7 +154,7 @@ const RequestList = () => {
 
             {/* Table Mobile View */}
 
-            <div className='w-full xl:hidden rounded-lg bg-white space-y-5 p-3 mb-12'>
+            <div className='w-full lg:hidden rounded-lg bg-white space-y-5 p-3 mb-12'>
 
                 {
                     Requesparcels.map((parcel) => {
@@ -179,7 +179,7 @@ const RequestList = () => {
                             <div className='flex gap-4 mt-4'>
 
                                 <div className='text-sm w-1/2 flex flex-col items-start gap-1'>
-                                    <p> P. ID: <span className="text-red-500">{parcel.parcelID}</span> </p>
+                                    <p> P. ID: <a href="#"><span className="text-red-500">{parcel.parcelID}</span> </a>  </p>
                                     <h1 className="font-medium flex gap-2 items-center"><FaUser />{parcel.customerName}</h1>
                                     <h1 className="flex gap-2 "> <div>  <FaLocationDot className="mt-1" /> </div> <div>{parcel.address} </div></h1>
                                     <h1 className='text-[#1B6EC0] font-medium'>(Regular)</h1>

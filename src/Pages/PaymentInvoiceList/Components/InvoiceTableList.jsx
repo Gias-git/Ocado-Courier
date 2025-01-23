@@ -95,15 +95,15 @@ const InvoiceTableList = () => {
                                     onChange={handleSelectAll}
                                 />
                             </th>
-                            <th className="py-2 px-4">Invoice Creation Date</th>
-                            <th className="py-2 px-4">Invoice ID</th>
-                            <th className="py-2 px-4">Collected</th>
-                            <th className="py-2 px-4">Delivery Cost</th>
-                            <th className="py-2 px-4">COD Cost</th>
-                            <th className="py-2 px-4">Payable Amount</th>
-                            <th className="py-2 px-4">invoice Count</th>
-                            <th className="py-2 px-4">Status</th>
-                            <th className="py-2 px-4">Action</th>
+                            <th className="py-2 px-4 text-center mx-auto">Invoice Creation Date</th>
+                            <th className="py-2 px-4 text-center mx-auto">Invoice ID</th>
+                            <th className="py-2 px-4 text-center mx-auto">Collected</th>
+                            <th className="py-2 px-4 text-center mx-auto">Delivery Cost</th>
+                            <th className="py-2 px-4 text-center mx-auto">COD Cost</th>
+                            <th className="py-2 px-4 text-center mx-auto">Payable Amount</th>
+                            <th className="py-2 px-4 text-center mx-auto">invoice Count</th>
+                            <th className="py-2 px-4 text-center mx-auto">Status</th>
+                            <th className="py-2 px-4 ">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -113,7 +113,7 @@ const InvoiceTableList = () => {
                                 className={`${invoice.id % 2 === 0 ? "bg-white" : "bg-gray-50"
                                     } border-t`}
                             >
-                                <td className="py-2 px-4">
+                                <td className="py-2 px-4 mx-auto">
                                     <input
                                         type="checkbox"
                                         className="checkbox border-[#E83330] [--chkbg:#E83330] [--chkfg:white] checked:border-[#E83330]"
@@ -121,14 +121,14 @@ const InvoiceTableList = () => {
                                         onChange={() => handleSelectIndividual(invoice.id)}
                                     />
                                 </td>
-                                <td className="py-2 px-4">{invoice.creationDate}</td>
-                                <td className="py-2 px-4 text-red-500">{invoice.invoiceId}</td>
-                                <td className="py-2 px-4">৳ {invoice.collected}</td>
-                                <td className="py-2 px-4">৳ {invoice.deliveryCost}</td>
-                                <td className="py-2 px-4">৳ {invoice.codCost}</td>
-                                <td className="py-2 px-4">৳ {invoice.payableAmount}</td>
-                                <td className="py-2 px-4">{invoice.invoiceCount}</td>
-                                <td className="py-2 px-4">
+                                <td className="py-2 px-4 text-center mx-auto">{invoice.creationDate}</td>
+                                <td className="py-2 px-4 text-red-500 text-center mx-auto"> <a href="#">{invoice.invoiceId}</a></td>
+                                <td className="py-2 px-4 text-center mx-auto">৳ {invoice.collected}</td>
+                                <td className="py-2 px-4 text-center mx-auto">৳ {invoice.deliveryCost}</td>
+                                <td className="py-2 px-4 text-center mx-auto">৳ {invoice.codCost}</td>
+                                <td className="py-2 px-4 text-center mx-auto">৳ {invoice.payableAmount}</td>
+                                <td className="py-2 px-4 text-center mx-auto">{invoice.invoiceCount}</td>
+                                <td className="py-2 px-4 text-center mx-auto">
                                     <span
                                         className={`px-3 py-1 text-sm rounded ${invoice.status === "Paid"
                                             ? "bg-green-100 text-green-600"
@@ -157,7 +157,7 @@ const InvoiceTableList = () => {
 
             {/* Table Mobile View */}
 
-            <div className="w-full xl:hidden rounded-lg bg-white space-y-5 p-3 mb-12 text-[#777777]">
+            <div className="w-full lg:hidden rounded-lg bg-white space-y-5 p-3 mb-12 text-[#777777]">
                 {invoices.map((invoice) => (
                     <div
                         key={invoice.id}

@@ -61,17 +61,17 @@ const ParcelTable = () => {
       <table className="min-w-full border-collapse">
         <thead>
           <tr className="text-left bg-gray-100">
-            <th className="px-4 py-2 text-gray-600">Creation Date</th>
-            <th className="px-4 py-2 text-gray-600">Parcel ID</th>
-            <th className="px-4 py-2 text-gray-600">Order ID</th>
-            <th className="px-4 py-2 text-gray-600">Customer Info</th>
-            <th className="px-4 py-2 text-gray-600">Invoice Status</th>
-            <th className="px-4 py-2 text-gray-600">Collectable</th>
-            <th className="px-4 py-2 text-gray-600">Collected</th>
-            <th className="px-4 py-2 text-gray-600">COD</th>
-            <th className="px-4 py-2 text-gray-600">Delivery Charge</th>
-            <th className="px-4 py-2 text-gray-600">Total</th>
-            <th className="px-4 py-2 text-gray-600">Payable</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Creation Date</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Parcel ID</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Order ID</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Customer Info</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Invoice Status</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Collectable</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Collected</th>
+            <th className="px-4 py-2 text-gray-600 text-center">COD</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Delivery Charge</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Total</th>
+            <th className="px-4 py-2 text-gray-600 text-center">Payable</th>
           </tr>
         </thead>
         <tbody>
@@ -83,23 +83,23 @@ const ParcelTable = () => {
               }`}
             >
               <td className="px-4 py-2">{parcel.creationDate}</td>
-              <td className="px-4 py-2 text-red-500">{parcel.parcelId}</td>
+              <td className="px-4 py-2 text-red-500"> <a href="#">{parcel.parcelId}</a></td>
               <td className="px-4 py-2 text-center">{parcel.orderId}</td>
-              <td className="px-4 py-2 text-center">
+              <td className="px-4 py-2 text-center ">
                 <p>{parcel.customerName}</p>
                 <p>{parcel.customerPhone}</p>
                 <p className="text-gray-500">Delivery Area: {parcel.deliveryArea}</p>
               </td>
-              <td className="px-4 py-2">
-                <span className="px-2 py-1 text-sm font-medium text-green-600 bg-green-100 rounded">
+              <td className="px-4 py-2 flex justify-center items-center flex-col gap-2">
+                <button className="px-2 py-1 text-sm font-medium text-green-600 bg-green-100 rounded ">
                   {parcel.invoiceStatus}
-                </span>
-                <p className="text-sm">{parcel.invoiceDate}</p>
+                </button>
+                <p className="text-sm text-center">{parcel.invoiceDate}</p>
               </td>
               <td className="px-4 py-2">{parcel.collectable}</td>
               <td className="px-4 py-2">{parcel.collected}</td>
               <td className="px-4 py-2">{parcel.cod}</td>
-              <td className="px-4 py-2">
+              <td className="px-4 py-2 text-center">
                 <p>{parcel.deliveryCharge}</p>
                 <p className="text-gray-500">Weight Charge {parcel.weightCharge}</p>
               </td>

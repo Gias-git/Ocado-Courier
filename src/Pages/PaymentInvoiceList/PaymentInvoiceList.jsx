@@ -6,6 +6,8 @@ import { GrDocumentText } from 'react-icons/gr';
 import { DatePicker } from 'antd';
 import { LuRefreshCcw } from 'react-icons/lu';
 import { FaDownload, FaPrint } from 'react-icons/fa';
+import { CiSearch } from 'react-icons/ci';
+import { Link, useLocation } from 'react-router-dom';
 
 const { RangePicker } = DatePicker;
 
@@ -43,8 +45,20 @@ const PaymentInvoiceList = () => {
         console.log("Selected Dates:", dateStrings); // Logs the selected dates as strings
     };
 
+    const {pathname} = useLocation()
+
     return (
         <div>
+
+            {/* Breadcrumbs */}
+            <div>
+                <div className='my-9 flex  items-center'>
+                    <Link> <h1 className='text-lg font-semibold'>Invoice</h1> </Link>
+                    {pathname == '/paymentInvoiceList' && ''}
+                    
+                </div>
+            </div>
+
             {/* Circular Progression Container */}
             <div className="bg-white grid grid-cols-2 lg:grid-cols-4 justify-evenly py-2">
                 {/* Total Invoice */}
@@ -106,23 +120,14 @@ const PaymentInvoiceList = () => {
                         </div>
                     </div>
 
-                    {/* Filter by Parcel ID Name/Phone */}
-                    <div>
-                        <label className="input input-bordered flex items-center gap-2">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 16 16"
-                                fill="currentColor"
-                                className="h-4 w-4 opacity-70"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                            <input type="text" className="grow" placeholder="Parcel ID Name/Phone" />
-                        </label>
+                    {/* Filter by parcel Id name/phone */}
+                    <div class="flex items-center border border-gray-300 rounded-md px-3 py-1 w-[256px]">
+                        <CiSearch />
+                        <input
+                            type="text"
+                            placeholder="Parcel ID Name/Phone"
+                            class="ml-2 w-full border-none focus:outline-none text-gray-500 placeholder-gray-400"
+                        />
                     </div>
 
                     <div className="flex gap-6 flex-col lg:flex-row">

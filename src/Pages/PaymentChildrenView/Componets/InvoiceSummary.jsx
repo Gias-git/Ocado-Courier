@@ -16,7 +16,7 @@ const InvoiceSummary = () => {
                 </div>
 
                 {/* Delivered Collected */}
-                <div className="flex flex-col  border-l-4 px-4 border-primaryColor">
+                <div className="flex flex-col  border-l-4 px-4 border-[#33A260]">
 
 
                     <h2 className="text-sm font-medium text-gray-700"> Delivered Collected</h2>
@@ -25,7 +25,7 @@ const InvoiceSummary = () => {
                 </div>
 
                 {/* Total Cost */}
-                <div className="flex flex-col  border-l-4 px-4 border-primaryColor">
+                <div className="flex flex-col  border-l-4 px-4 border-[#16A7D3]">
 
 
                     <h2 className="text-sm font-medium text-gray-700">Total Cost</h2>
@@ -34,7 +34,7 @@ const InvoiceSummary = () => {
                 </div>
 
                 {/* Total Payable Amount */}
-                <div className="flex flex-col  border-l-4 px-4 border-primaryColor">
+                <div className="flex flex-col  border-l-4 px-4 border-[#249782]">
 
 
                     <h2 className="text-sm font-medium text-gray-700">Total Payable Amount</h2>

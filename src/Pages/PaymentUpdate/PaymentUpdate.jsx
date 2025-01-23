@@ -2,10 +2,10 @@ import React from 'react';
 
 const PaymentUpdate = () => {
     return (
-        <div className='mt-12 px-10 mb-12'>
+        <div className='mt-12 lg:px-10 px-4 mb-12'>
             <h1 className='text-lg font-bold'>Payment Update</h1>
             <div className='mt-10'>
-                <form className='grid grid-cols-1 lg:grid-cols-2 px-12 w-full gap-8'>
+                <form className='grid grid-cols-1 lg:grid-cols-2 lg:px-12 w-full gap-8'>
 
                     {/* Select Bank Field */}
                     <div className='space-y-2'>

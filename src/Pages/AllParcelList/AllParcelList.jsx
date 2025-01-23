@@ -5,6 +5,7 @@ import { FaLocationDot } from 'react-icons/fa6';
 import { HiMiniDocumentMinus } from 'react-icons/hi2';
 import PaginationComponent from './Components/PaginationComponent ';
 import ProgressionSateSection from './Components/PregressionsSatSection';
+import ParcelNotFound from '../../Components/ParcelNotFound';
 
 const AllParcelList = () => {
     const [isAllSelected, setIsAllSelected] = useState(false)
@@ -86,6 +87,12 @@ const AllParcelList = () => {
         setIsAllSelected(allSelected);
     };
 
+    if (parcels.length == 0) {
+        return <ParcelNotFound></ParcelNotFound>
+    }
+
+
+
     return (
         <div className='mt-6 mb-64'>
 
@@ -114,7 +121,7 @@ const AllParcelList = () => {
                 <table className="w-full rounded-lg bg-white">
                     <thead className="rounded-lg">
                         <tr className="bg-[#FAFAFA] text-sm font-medium text-[#152934D9] my-4 ">
-                        <th onClick={handleSelectAll} className="border border-gray-200 px-4 py-2 border-l-2 text-4xl">
+                            <th onClick={handleSelectAll} className="border border-gray-200 px-4 py-2 border-l-2 text-4xl">
                                 <input
                                     type="checkbox"
                                     className="checkbox border-[#E83330] [--chkbg:#E83330] [--chkfg:white] checked:border-[#E83330]"
@@ -135,7 +142,7 @@ const AllParcelList = () => {
                         {parcels.map((parcel, index) => (
                             <tr key={index} className="border-t">
                                 <td className="border px-4 py-2 text-center">
-                                <input
+                                    <input
                                         type="checkbox"
                                         className="checkbox border-[#E83330] [--chkbg:#E83330] [--chkfg:white] checked:border-[#E83330]"
                                         checked={!!selectedParcels[parcel.id]}
@@ -148,7 +155,7 @@ const AllParcelList = () => {
                                     {parcel.creationTime}
                                 </td>
                                 <td className="border px-4 py-2">
-                                    <span className="text-red-500">{parcel.parcelID}</span>
+                                    <a href="#"><span className="text-red-500">{parcel.parcelID}</span></a>
                                     <br />
                                     Order ID: {parcel.orderID}
                                 </td>
@@ -163,7 +170,7 @@ const AllParcelList = () => {
                                 </td>
                                 <td className="border px-4 py-2">
                                     <button
-                                        className={`px-2 py-1 flex gap-3 justify-center items-center text-sm font-semibold rounded ${parcel.parcelStatus ? "bg-[#FFBEBE99] text-red-700"
+                                        className={`px-2 py-1 mx-auto flex gap-3 justify-center items-center text-sm font-semibold rounded ${parcel.parcelStatus ? "bg-[#FFBEBE99] text-red-700"
                                             : "bg-[#16E36826] text-[#14885F]"
                                             }`}
                                     >

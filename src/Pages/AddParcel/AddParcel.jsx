@@ -15,7 +15,7 @@ const AddParcel = () => {
 
                 {/* form header */}
                 <div className='mb-6'>
-                    <h1 className='text-6 font-semibold'>To create multiple parcel quickly</h1>
+                    <h1 className='text-xl font-semibold'>To create multiple parcel quickly</h1>
                 </div>
 
 
@@ -49,7 +49,7 @@ const AddParcel = () => {
                         <div className='space-y-2 order-2 md:order-1 '>
                             <h1 className='text-lg font-medium'>Phone <span className='text-primaryColor'>  * </span></h1>
                             <input required
-                                type="number"
+                                type="text"
                                 placeholder="Customer Phone Number"
                                 className="input input-bordered  w-full lg:max-w-xs" />
                             <div className='flex gap-3 text-[12px]'>
@@ -65,7 +65,7 @@ const AddParcel = () => {
                         <div className='space-y-2 order-3 md:order-2 '>
                             <h1 className='text-lg font-medium'>Secondary Phone <span className='text-primaryColor'>  * </span></h1>
                             <input
-                                type="number"
+                                type="text"
                                 placeholder="Customer Phone Number (Optional)"
                                 className="input input-bordered  w-full lg:max-w-xs" />
                         </div>
@@ -76,7 +76,7 @@ const AddParcel = () => {
                         <div className='space-y-2 order-1 md:order-3 '>
                             <h1 className='text-lg font-medium'>Merchant Order ID <span className='text-primaryColor'>  * </span></h1>
                             <input required
-                                type="number"
+                                type="text"
                                 placeholder="Type ID (Optional)"
                                 className="input input-bordered  w-full lg:max-w-xs" />
                         </div>
@@ -106,7 +106,7 @@ const AddParcel = () => {
                         </div>
 
 
-                      
+
 
 
                         {/* Address  Field */}
@@ -119,7 +119,7 @@ const AddParcel = () => {
                         <div className='space-y-2 order-7'>
                             <h1 className='text-lg font-medium'>Collected Amount  <span className='text-primaryColor'>  * </span></h1>
                             <input required
-                                type="number"
+                                type="text"
                                 placeholder="Type collected amount"
                                 className="input input-bordered  w-full lg:max-w-xs" />
                         </div>
@@ -129,7 +129,7 @@ const AddParcel = () => {
                         <div className='space-y-2 order-8'>
                             <h1 className='text-lg font-medium'>Product Value Amount <span className='text-primaryColor'>  * </span></h1>
                             <input required
-                                type="number"
+                                type="text"
                                 placeholder="Type value amount (Optional)"
                                 className="input input-bordered  w-full lg:max-w-xs" />
                         </div>
@@ -158,7 +158,7 @@ const AddParcel = () => {
                         <div className='space-y-2 order-11'>
                             <h1 className='text-lg font-medium'>Weight (KG)</h1>
                             <input required
-                                type="number"
+                                type="text"
                                 placeholder="Customer Phone Number"
                                 className="input input-bordered  w-full lg:max-w-xs" />
                         </div>
@@ -179,15 +179,23 @@ const AddParcel = () => {
                         <div className='space-y-2 order-13'>
                             <h1 className='text-lg font-medium'>Dateline Delivery <span className='text-primaryColor'>  * </span></h1>
                             <input required
-                                type="number"
+                                type="text"
                                 placeholder="Select your Dateline Delivery (Optional)"
                                 className="input input-bordered  w-full lg:max-w-xs" />
+
+                            <label class="flex items-center space-x-6">
+                                <span class="text-lg font-medium">Exchange</span>
+                                <input
+                                    type="checkbox"
+                                    className="checkbox rounded-sm border-[#E83330] [--chkbg:#E83330] [--chkfg:white] checked:border-[#E83330]"
+                                />
+                            </label>
                         </div>
 
 
-                          {/* Account Field */}
-                          <div className='space-y-2 row-span-5 order-14 md:order-6 '>
-                            <div className=' px-4 py-5 border-2 border-primaryColor rounded-lg space-y-6 font-medium'>
+                        {/* Account Field */}
+                        <div className='space-y-2 row-span-5 order-14 md:order-6 '>
+                            <div className=' px-4 py-7 border-2 border-primaryColor rounded-lg space-y-6 font-medium'>
 
                                 {/* Heading */}
                                 <h1 className='text-lg font-semibold'>Parcel Delivery Cost</h1>
@@ -227,6 +235,11 @@ const AddParcel = () => {
                                             <h3>1600 Tk</h3>
                                         </div>
 
+                                    </div>
+
+
+                                    <div>
+                                        <h1 className='text-[#9F9F9F] font-light text-sm py-10 text-center'>Powered by ocadocourier</h1>
                                     </div>
                                 </div>
                             </div>

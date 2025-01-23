@@ -11,7 +11,7 @@ const DashBoardPage = () => {
         <div className='overflow-y-auto mb-20'>
 
             {/* Page Heading */}
-            <div className='mb-10'>
+            <div className='mb-10 mt-10'>
                 <h1 className='text-3xl font-bold'>Dashboard</h1>
                 <p className='text-base text-[#4E4E4E]'>Let’s check your update today & Total</p>
             </div>

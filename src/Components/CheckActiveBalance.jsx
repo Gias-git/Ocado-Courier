@@ -7,7 +7,6 @@ const CheckActiveBalance = () => {
 
     const [balanceShow, setBalanceShow] = useState(false)
 
-
     return (
         <div onClick={() => setBalanceShow(!balanceShow)} className='bg-[#FFF9F9] overflow-hidden border-2 border-primaryColor w-[272px] rounded-3xl flex mx-auto lg:mt-4 mt-6 mb-4 '>
             <div className={`${balanceShow && 'transform translate-x-[280px] duration-1000'} ${balanceShow || 'transform duration-1000'} flex items-center  gap-10`}>
@@ -23,7 +22,7 @@ const CheckActiveBalance = () => {
 
 
 
-            <div className={`flex justify-start items-center -ml-7 gap-3 w-full ${balanceShow || 'transform translate-y-[280px] duration-1000'}  ${balanceShow && 'transform -translate-x-[0] duration-1000'}`}>
+            <div className={`flex justify-start items-center -ml-9 gap-3 w-full ${balanceShow || 'transform translate-y-[280px] duration-1000'}  ${balanceShow && 'transform -translate-x-[0] duration-1000'}`}>
 
                 <div>
                     <img className='h-6 w-6' src={balanceIcon} alt="" />

@@ -1,16 +1,13 @@
 import React from 'react';
-import StartComponent from './StartComponent';
 import navImg from '../assets/navImg.png'
 import CheckActiveBalance from './CheckActiveBalance';
 import { IoIosArrowDown } from 'react-icons/io';
 import NotificationModal from './NotificationModal';
-import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaBoxOpen, FaCode, FaCog, FaLanguage, FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
-import { RxDashboard } from 'react-icons/rx';
-import { HiDocumentText } from 'react-icons/hi2';
-import { MdOutlinePayments } from 'react-icons/md';
-import { BsClipboardPlusFill } from 'react-icons/bs';
+import { FaBoxOpen, FaCode, FaCog, FaFileInvoiceDollar, FaLanguage, FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
+import { MdDashboard, MdOutlinePayments } from 'react-icons/md';
+import { IoBagAddSharp } from 'react-icons/io5';
+import { PiListBulletsFill } from 'react-icons/pi';
 
 
 const Navbar = ({ isModalOpen, setModalOpen }) => {
@@ -25,7 +22,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
     ];
     return (
         <div className="navbar  bg-base-100  top-0">
-            <div className="navbar-start">
+            <div onClick={()=>setModalOpen(false)} className="navbar-start">
                 <div className="dropdown  lg:hidden">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                         <svg
@@ -55,7 +52,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
                                     `flex items-center gap-2 ${isActive ? 'text-red-500 font-bold' : ''}`
                                 }
                             >
-                                <RxDashboard className="text-base" />
+                                <MdDashboard className="text-base" />
                                 DashBoard
                             </NavLink>
                         </li>
@@ -71,7 +68,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
                                     `flex items-center gap-2 ${isActive ? 'text-red-500 font-bold' : ''}`
                                 }
                             >
-                                <BsClipboardPlusFill />
+                                <IoBagAddSharp />
                                 Add Parcel
                             </NavLink>
                         </li>
@@ -102,7 +99,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
                                     `flex items-center gap-2 ${isActive ? 'text-red-500 font-bold' : ''}`
                                 }
                             >
-                                <HiDocumentText />
+                                <PiListBulletsFill />
                                 All Parcel List
                             </NavLink>
                         </li>
@@ -117,7 +114,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
                                     `flex items-center gap-2 ${isActive ? 'text-red-500 font-bold' : ''}`
                                 }
                             >
-                                <MdOutlinePayments />
+                                <FaFileInvoiceDollar />
                                 payment Invoice List
                             </NavLink>
                         </li>
@@ -129,11 +126,11 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
 
                 {/* logo */}
                 <div>
-                    <img src={navImg} alt="" />
+                    <img className='w-[90px]' src={navImg} alt="" />
                 </div>
             </div>
             <div className='navbar-center hidden lg:block'>
-                <div className=" flex  justify-center items-center gap-16">
+                <div className=" flex  justify-center items-center gap-16 mr-2">
                     {/* Search  */}
                     <div className=''>
                         <label className="input input-bordered rounded-full flex items-center py-6  gap-2">
@@ -226,7 +223,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
 
 
                 {/* Profile  */}
-                <div className='hidden lg:block '>
+                <div onClick={()=>setModalOpen(false)} className='hidden lg:block '>
                     <div className='flex gap-5 '>
                         <div className='bg-primaryColor bg-opacity-35 w-11 h-11 rounded-full flex justify-center items-center '>
                             <h1 className='text-2xl text-primaryColor'>o</h1>
@@ -314,7 +311,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
                     </div>
                 </div>
 
-                <div className="dropdown dropdown-end lg:hidden">
+                <div onClick={()=>setModalOpen(false)} className="dropdown dropdown-end lg:hidden">
                     <div className=''>
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
@@ -389,8 +386,6 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
 
                     </ul>
                 </div>
-
-
             </div>
 
             <div className='absolute top-24 right-3 lg:right-40 z-50'>

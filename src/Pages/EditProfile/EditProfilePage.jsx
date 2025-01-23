@@ -20,7 +20,7 @@ const EditProfilePage = () => {
                 <div className='space-y-2 order-2 md:order-1 '>
                     <h1 className='text-lg font-medium'>Phone </h1>
                     <input required
-                        type="Number"
+                        type="text"
                         placeholder="Enter Phone number"
                         className="input input-bordered  w-full " />
                 </div>
@@ -30,7 +30,7 @@ const EditProfilePage = () => {
                 <div className='space-y-2 order-2 md:order-1 '>
                     <h1 className='text-lg font-medium'>Secondary Number</h1>
                     <input required
-                        type="number"
+                        type="text"
                         placeholder="Enter your number"
                         className="input input-bordered  w-full " />
                 </div>

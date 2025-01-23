@@ -17,6 +17,8 @@ import ChangePasswordPage from '../Pages/EditProfile/ChangePasswordpage';
 import PaymentUpdate from '../Pages/PaymentUpdate/PaymentUpdate';
 import ParcelView from '../Pages/ParcelView/ParcelView';
 import PaymentChildrenView from '../Pages/PaymentChildrenView/PaymentChildrenView';
+import NoInternet from '../Layouts/NoInternet';
+import PageNotFound from '../Layouts/PageNotFound';
 
 
 
@@ -24,6 +26,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <DashBoard></DashBoard>,
+        errorElement: <PageNotFound></PageNotFound>,
         children: [
             {
                 path: "/",
@@ -104,6 +107,10 @@ const router = createBrowserRouter([
     {
         path: "/register",
         element: <Register></Register>
+    },
+    {
+        path: "/noInternet",
+        element: <NoInternet></NoInternet>
     }
 ]);
 

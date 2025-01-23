@@ -1,15 +1,45 @@
 import React, { useState } from 'react';
-import { BiArrowFromRight, BiCalendar } from 'react-icons/bi';
-import CircularProgressDashboard from './CircularProgress';
-import { FaArrowRight } from 'react-icons/fa';
 import { DatePicker, Space } from 'antd';
+import { GrDocumentText } from 'react-icons/gr';
+import { LuRefreshCcw } from 'react-icons/lu';
+import { FaDownload, FaPrint } from 'react-icons/fa';
+import { CiSearch } from 'react-icons/ci';
+import CircularProgressDashboard from './CircularProgress';
+
 const { RangePicker } = DatePicker;
 
 const TotalOverview = () => {
+    const [dates, setDates] = useState(null);
+    const [mobileDateFilterFirstDate, setMobileDateFilterFirstDate] = useState(null);
+    const [mobileDateFilterSecondDate, setMobileDateFilterSecondDate] = useState(null);
 
-    const [dates, setDates] = useState([])
-   
+    console.log(dates)
 
+    const handleFirstDateChange = (date, dateString) => {
+        setMobileDateFilterFirstDate(dateString);
+        if (dateString && mobileDateFilterSecondDate) {
+            setDates([dateString, mobileDateFilterSecondDate]);
+        }
+    };
+
+    const handleSecondDateChange = (date, dateString) => {
+        setMobileDateFilterSecondDate(dateString);
+        if (mobileDateFilterFirstDate && dateString) {
+            setDates([mobileDateFilterFirstDate, dateString]);
+        }
+    };
+
+    const icon = (
+        <>
+            <GrDocumentText />
+        </>
+    );
+
+    // For Desktop
+    const handleDateChange = (dates, dateStrings) => {
+        setDates(dateStrings);
+        console.log("Selected Dates:", dateStrings);
+    };
     return (
         <div>
 
@@ -17,13 +47,36 @@ const TotalOverview = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
                     <h1 className="font-semibold">Total Overview</h1>
 
-                    {/* Date Picker */}
-                    <div className="w-full lg:w-auto">
-                        <RangePicker
-                            style={{ width: '100%' }}
-                            onChange={(dates) => setDates(dates)}
-                        />
+                    {/* By Date Filter */}
+                    <div>
+                        <div className="w-full lg:w-auto hidden lg:block">
+                            <RangePicker
+                                style={{ width: '100%' }}
+                                onChange={handleDateChange}
+                                placeholder={['Start Date', 'End Date']}
+                                format="DD-MM-YYYY"
+                            />
+                        </div>
                     </div>
+
+                    <div className="">
+                        <div className="w-full lg:hidden flex gap-6">
+                            <DatePicker
+                                style={{ width: '100%' }}
+                                placeholder="Select From"
+                                format="DD-MM-YYYY"
+                                onChange={handleFirstDateChange} // Use specific handler for first date
+                            />
+                            <DatePicker
+                                style={{ width: '100%' }}
+                                placeholder="Select To"
+                                format="DD-MM-YYYY"
+                                onChange={handleSecondDateChange} // Use specific handler for second date
+                            />
+
+                        </div>
+                    </div>
+
                 </div>
 
                 <div >
@@ -34,7 +87,7 @@ const TotalOverview = () => {
 
             <div className='flex flex-col lg:flex-row justify-between items-center mt-10'>
                 <div className='mx-auto '>
-                    <CircularProgressDashboard />
+                    <CircularProgressDashboard></CircularProgressDashboard>
                 </div>
 
                 <div className='space-y-7'>

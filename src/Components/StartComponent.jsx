@@ -9,12 +9,12 @@ import { Link } from 'react-router-dom'
 const StartComponent = () => {
     return (
         <div>
-            <div style={{ backgroundImage: `url(${vectorBg})` }} className={`w-6/12 mx-auto flex  rounded-b-3xl  p-2  bg-cover`}>
+            <div style={{ backgroundImage: `url(${vectorBg})` }} className={`xl:w-8/12 w-10/12 mx-auto flex  rounded-b-3xl  p-2  bg-cover`}>
 
                 {/* add parcel */}
 
 
-                <Link to='/addParcel' className='flex justify-center gap-4 items-center py-2 border-r-2 border-[#A9A9A9] w-3/12'>
+                <Link to='/addParcel' className='flex   justify-center gap-4 items-center py-2 border-r-2 border-[#A9A9A9] w-3/12'>
                     <img src={addParcel} alt="" />
                     <h1>Add Parcel</h1>
                 </Link>

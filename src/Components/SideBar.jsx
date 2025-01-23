@@ -1,15 +1,17 @@
 import React from 'react';
 import logo from '../assets/logoSingle.png'
 import Ocadologo from '../assets/ocadologo 2.png'
-import { RxDashboard } from 'react-icons/rx';
+import { RiLogoutBoxRFill } from "react-icons/ri";
 import { IoMdSettings } from 'react-icons/io';
 import { AiOutlinePoweroff } from 'react-icons/ai';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { IoBagAddSharp, IoLogOutSharp } from "react-icons/io5";
 import { BsClipboard2PlusFill, BsClipboardPlusFill } from 'react-icons/bs';
-import { FaBoxOpen, FaMoneyCheckAlt } from 'react-icons/fa';
+import { FaBoxOpen, FaFileInvoiceDollar, FaMoneyCheckAlt } from 'react-icons/fa';
 import { HiDocumentText } from 'react-icons/hi2';
-import { MdLogout, MdOutlinePayments } from 'react-icons/md';
+import { MdDashboard, MdLogout, MdOutlinePayments } from 'react-icons/md';
+import { PiListBulletsFill } from "react-icons/pi";
 
 const SideBar = ({isHovered, setIsHovered}) => {
     
@@ -40,18 +42,18 @@ const SideBar = ({isHovered, setIsHovered}) => {
                 <div className='flex gap-4 justify-center items-center flex-col mt-[40px] '>
 
 
-                    {/* Home Page */}
+                    {/* Dash Board Home Page */}
                     <NavLink
                         to="/"
                         className={({ isActive }) =>
-                            `${isActive ? 'text-primaryColor border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                            `${isActive ? `text-primaryColor border-l-4 border-primaryColor ${isHovered && 'bg-[#E8333036]'} ` : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
                         }
                     >
                         <button
                             className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
                         >
                             <div>
-                                <RxDashboard className="text-2xl" />
+                                <MdDashboard  className="text-2xl" />
                             </div>
                             <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
                                 DashBoard
@@ -63,14 +65,14 @@ const SideBar = ({isHovered, setIsHovered}) => {
                     <NavLink
                         to="/addParcel"
                         className={({ isActive }) =>
-                            `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                            `${isActive ? `text-primaryColor border-l-4 border-primaryColor ${isHovered && 'bg-[#E8333036]'} ` : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
                         }
                     >
                         <button
                             className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
                         >
                             <div>
-                                <BsClipboardPlusFill className="text-2xl" />
+                                <IoBagAddSharp  className="text-2xl" />
                             </div>
                             <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
                                 Add Parcel
@@ -84,7 +86,7 @@ const SideBar = ({isHovered, setIsHovered}) => {
                     <NavLink
                         to="/requestList"
                         className={({ isActive }) =>
-                            `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                            `${isActive ? `text-primaryColor border-l-4 border-primaryColor ${isHovered && 'bg-[#E8333036]'} ` : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
                         }
                     >
                         <button
@@ -105,14 +107,14 @@ const SideBar = ({isHovered, setIsHovered}) => {
                     <NavLink
                         to="/allParcelList"
                         className={({ isActive }) =>
-                            `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                            `${isActive ? `text-primaryColor border-l-4 border-primaryColor ${isHovered && 'bg-[#E8333036]'} ` : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
                         }
                     >
                         <button
                             className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
                         >
                             <div>
-                                <HiDocumentText className="text-2xl" />
+                                <PiListBulletsFill   className="text-2xl" />
                             </div>
                             <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
                                 All Parcel
@@ -126,14 +128,14 @@ const SideBar = ({isHovered, setIsHovered}) => {
                     <NavLink
                         to="/paymentInvoiceList"
                         className={({ isActive }) =>
-                            `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                            `${isActive ? `text-primaryColor border-l-4 border-primaryColor ${isHovered && 'bg-[#E8333036]'} ` : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
                         }
                     >
                         <button
                             className="flex justify-start items-center px-4 py-3 gap-4 text-left  hover:text-primaryColor"
                         >
                             <div>
-                                <MdOutlinePayments   className="text-2xl" />
+                                <FaFileInvoiceDollar    className="text-2xl" />
                             </div>
                             <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
                                 Payment Invoice List
@@ -154,7 +156,7 @@ const SideBar = ({isHovered, setIsHovered}) => {
                 <NavLink
                     to="/profile"
                     className={({ isActive }) =>
-                        `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                        `${isActive ? `text-primaryColor border-l-4 border-primaryColor ${isHovered && 'bg-[#E8333036]'} ` : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
                     }
                 >
                     <button
@@ -174,14 +176,14 @@ const SideBar = ({isHovered, setIsHovered}) => {
                 <NavLink
                     to="/"
                     className={({ isActive }) =>
-                        `${isActive ? 'text-primaryColor  border-l-4 border-primaryColor' : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
+                        `${isActive ? `text-primaryColor border-l-4 border-primaryColor ${isHovered && 'bg-[#E8333036]'} ` : ''} w-full hover:bg-[#E8333036] hover:rounded-md`
                     }
                 >
                     <button
                         className="flex justify-start items-center px-4 py-2 gap-4 text-left  hover:text-primaryColor"
                     >
                         <div>
-                            <MdLogout className="text-2xl" />
+                            <IoLogOutSharp className="text-2xl" />
                         </div>
                         <h1 className={`${isHovered ? 'block' : 'hidden'} font-bold text-[14px]`}>
                             logout
