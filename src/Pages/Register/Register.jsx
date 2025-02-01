@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 
 const Register = () => {
     return (
-        <div className='min-h-screen text-sm font-lato flex flex-col justify-center items-center gap-8 relative my-10'>
+        <div className='min-h-screen  text-sm font-lato flex flex-col justify-center items-center gap-8 relative my-10'>
 
             {/* Background Design */}
             <div>

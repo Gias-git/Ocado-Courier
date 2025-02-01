@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 const StartComponent = () => {
     return (
         <div>
-            <div style={{ backgroundImage: `url(${vectorBg})` }} className={`xl:w-8/12 w-10/12 mx-auto flex  rounded-b-3xl  p-2  bg-cover`}>
+            <div style={{ backgroundImage: `url(${vectorBg})` }} className={`xl:w-8/12 w-10/12 mx-auto flex  rounded-b-3xl  p-1  bg-cover`}>
 
                 {/* add parcel */}
 

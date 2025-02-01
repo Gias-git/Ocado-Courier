@@ -21,7 +21,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
         { date: "01-11-24", message: "This is your first notification message!" },
     ];
     return (
-        <div className="navbar  bg-base-100  top-0">
+        <div className="navbar max-h-[72px]  bg-base-100  top-0">
             <div onClick={()=>setModalOpen(false)} className="navbar-start">
                 <div className="dropdown  lg:hidden">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -41,7 +41,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
 
 
                     {/* Dropdown Menu for mobile device*/}
-                    <ul tabIndex={0} className="dropdown-content px-6  bg-base-100  z-[1] w-64 mt-5 p-2 shadow space-y-3">
+                    <ul tabIndex={0} className="dropdown-content px-6 rounded-xl  bg-base-100  z-[1] w-64 mt-5 p-2 shadow space-y-3">
 
                         {/* DashBoard Link */}
                         <li>
@@ -243,7 +243,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
                             </div>
 
                             {/* Dropdown Menu */}
-                            <ul tabIndex={0} className="dropdown-content px-6  bg-base-100  z-[1] w-64 mt-12 p-2 shadow space-y-3">
+                            <ul tabIndex={0} className="dropdown-content px-6 rounded-xl  bg-base-100  z-[1] w-64 mt-9 p-2 shadow space-y-3">
                                 {/* Profile Link */}
                                 <li>
                                     <NavLink
@@ -322,7 +322,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
                         </div>
                     </div>
                     {/* Dropdown Menu */}
-                    <ul tabIndex={0} className="dropdown-content px-6  bg-base-100  z-[1] w-64 mt-5 p-2 shadow space-y-3">
+                    <ul tabIndex={0} className="dropdown-content px-6  bg-base-100 rounded-xl  z-[1] w-64 mt-5 p-2 shadow space-y-3">
                         {/* Profile Link */}
                         <li>
                             <NavLink
@@ -388,7 +388,7 @@ const Navbar = ({ isModalOpen, setModalOpen }) => {
                 </div>
             </div>
 
-            <div className='absolute top-24 right-3 lg:right-40 z-50'>
+            <div className='absolute top-20 right-3 lg:right-40 z-50'>
                 <NotificationModal
                     isOpen={isModalOpen}
                     notifications={notifications}

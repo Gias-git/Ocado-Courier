@@ -53,14 +53,14 @@ const PaymentInvoiceList = () => {
             {/* Breadcrumbs */}
             <div>
                 <div className='my-9 flex  items-center'>
-                    <Link> <h1 className='text-lg font-semibold'>Invoice</h1> </Link>
+                    <Link> <h1 className='text-2xl font-semibold'>Invoice</h1> </Link>
                     {pathname == '/paymentInvoiceList' && ''}
                     
                 </div>
             </div>
 
             {/* Circular Progression Container */}
-            <div className="bg-white grid grid-cols-2 lg:grid-cols-4 justify-evenly py-2">
+            <div className="bg-white grid grid-cols-2 gap-8 lg:grid-cols-4 justify-evenly py-4">
                 {/* Total Invoice */}
                 <CircularProgression
                     title="Total Invoice"

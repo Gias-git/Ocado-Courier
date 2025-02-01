@@ -40,7 +40,7 @@ const MainLayout = () => {
                 </div>
 
 
-                <div className='hidden lg:block'>
+                <div className='hidden pb-[64px] lg:block'>
                     <StartComponent></StartComponent>
                 </div>
                 <div className='lg:hidden'>

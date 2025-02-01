@@ -252,7 +252,7 @@ const AddParcel = () => {
                 </form>
 
                 <div className='flex justify-center items-center mt-12'>
-                    <button className='text-2xl text-white font-semibold bg-primaryColor py-3 px-20 rounded font-lato mx-auto'>Create</button>
+                    <button className='text-[22px] text-white font-semibold bg-primaryColor w-[220px] h-[44px] rounded font-lato mx-auto'>Create</button>
                 </div>
             </div>
         </div>

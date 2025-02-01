@@ -118,7 +118,7 @@ const SortingSection = () => {
 
 
             {/* For Mobile View */}
-            <div className='lg:hidden space-y-5'>
+            <div className='lg:hidden space-y-5 px-2'>
 
                 {/* title */}
                 <div className='text-xl  lg:hidden font-medium'>

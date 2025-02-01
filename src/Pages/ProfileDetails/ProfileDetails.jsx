@@ -1,12 +1,15 @@
 import React from 'react';
 import { CiMobile1 } from 'react-icons/ci';
 import { IoMdLaptop } from 'react-icons/io';
+import { HiInformationCircle } from "react-icons/hi2";
 
 const ProfileDetails = () => {
     return (
         <div>
-            <h1 className='text-[17px] underline font-lato font-semibold mb-6 px-8 py-8'>Profile Details</h1>
+            <h1 className='text-[17px]  font-lato font-semibold mb-6 px-8 py-8'>Profile Details</h1>
 
+            <hr className='pt-4  col-span-2  order-2 md:order-1 ' />
+            <div><h1 className='text-[#717171] text-[14px] text-center pb-10 flex gap-2 justify-center items-center'><HiInformationCircle /> Your name is updated with verified NID name, you can't edit your name</h1></div>
             {/* Form Container */}
             <form className='grid grid-cols-1 lg:grid-cols-2 px-4 lg:px-12 w-full gap-8'>
 
